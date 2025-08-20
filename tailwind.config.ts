@@ -8,10 +8,17 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['PT Sans', 'sans-serif'],
+        headline: ['Poppins', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -88,10 +95,24 @@ export default {
             height: '0',
           },
         },
+        'pulse-slow': {
+          '50%': {
+            opacity: '0.5',
+            transform: 'scale(1.1)',
+          },
+        },
+        'pulse-slower': {
+            '50%': {
+              opacity: '0.4',
+              transform: 'scale(1.2) translate(-10%, 10%)',
+            },
+          },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-slow': 'pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pulse-slower': 'pulse-slower 10s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
   },
