@@ -72,18 +72,18 @@ export default function Pricing() {
           </p>
         </motion.div>
         <motion.div
-          className="mt-12 grid gap-8 md:grid-cols-3 lg:gap-12"
+          className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
           {plans.map((plan) => (
-            <motion.div key={plan.name} variants={itemVariants}>
+            <motion.div key={plan.name} variants={itemVariants} className="flex">
               <Card
                 className={cn(
-                  'flex flex-col h-full rounded-2xl shadow-lg transition-all duration-300',
-                  plan.popular ? 'border-2 border-primary shadow-primary/20 -translate-y-4' : 'hover:-translate-y-2'
+                  'flex flex-col h-full w-full rounded-2xl shadow-lg transition-all duration-300',
+                  plan.popular ? 'border-2 border-primary shadow-primary/20 scale-105' : 'hover:scale-105'
                 )}
               >
                 {plan.popular && (

@@ -45,7 +45,7 @@ export default function Contact() {
 
 
   return (
-    <section id="contact" className="w-full relative overflow-hidden">
+    <section id="contact" className="w-full relative overflow-hidden py-16 sm:py-20 md:py-24">
         <div className="absolute top-0 left-0 -z-10 h-full w-full bg-white [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"></div>
         <div className="absolute bottom-0 right-0 -z-10 h-full w-full bg-blue-50 [mask-image:radial-gradient(100%_100%_at_bottom_left,white,transparent)]"></div>
 
