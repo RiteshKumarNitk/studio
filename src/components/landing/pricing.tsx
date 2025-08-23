@@ -7,24 +7,24 @@ import { cn } from '@/lib/utils';
 
 const plans = [
   {
-    name: 'Starter Shine',
-    price: '₹699',
-    duration: '1 Week',
-    features: ['2 Washes', 'Exterior Cleaning', 'Tire Shine'],
+    name: 'Quick Sparkle',
+    price: '₹499',
+    duration: 'per wash',
+    features: ['Exterior Wash', 'Tire Shine', 'Window Cleaning'],
     popular: false,
   },
   {
-    name: 'Classic Clean',
-    price: '₹1299',
-    duration: '2 Weeks',
-    features: ['4 Washes', 'Exterior Cleaning', 'Tire Shine', 'Interior Vacuuming'],
+    name: 'Super Shine',
+    price: '₹999',
+    duration: 'per wash',
+    features: ['Everything in Quick Sparkle', 'Interior Vacuuming', 'Dashboard Polish'],
     popular: true,
   },
   {
-    name: 'Elite Detailing',
-    price: '₹1799',
-    duration: '1 Month',
-    features: ['6 Washes', 'Full Detailing', 'Wax Polish', 'Interior Deep Clean'],
+    name: 'Ultimate Glow',
+    price: '₹1499',
+    duration: 'per wash',
+    features: ['Everything in Super Shine', 'Deep Upholstery Clean', 'Protective Wax Coating'],
     popular: false,
   },
 ];
