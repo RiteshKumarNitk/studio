@@ -1,3 +1,6 @@
+'use client';
+
+import { Suspense } from 'react';
 import Header from '@/components/landing/header';
 import Hero from '@/components/landing/hero';
 import HowItWorks from '@/components/landing/how-it-works';
@@ -8,8 +11,9 @@ import Offers from '@/components/landing/offers';
 import Testimonials from '@/components/landing/testimonials';
 import Contact from '@/components/landing/contact';
 import Footer from '@/components/landing/footer';
+import HomePageSkeleton from '@/components/landing/home-page-skeleton';
 
-export default function HomePage() {
+function HomeComponent() {
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
@@ -25,5 +29,14 @@ export default function HomePage() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={<HomePageSkeleton />}>
+      <HomeComponent />
+    </Suspense>
   );
 }

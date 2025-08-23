@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
+import SplashScreenProvider from '@/components/splash-screen-provider';
 
 export const metadata: Metadata = {
   title: 'Bubble Drive – Daily Dust, Leave It to Us',
@@ -23,7 +24,12 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-body antialiased">{children}<Toaster /></body>
+      <body className="font-body antialiased">
+        <SplashScreenProvider>
+          {children}
+        </SplashScreenProvider>
+        <Toaster />
+      </body>
     </html>
   );
 }
