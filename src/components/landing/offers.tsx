@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { TicketPercent, Users } from 'lucide-react';
+import { TicketPercent, Users, Gift } from 'lucide-react';
 
 const offers = [
     {
@@ -13,6 +13,11 @@ const offers = [
         icon: <Users className="h-8 w-8 text-primary" />,
         title: "Refer a Friend",
         description: "Share the love! You and your friend both get ₹250 OFF when they book their first wash.",
+    },
+    {
+        icon: <Gift className="h-8 w-8 text-primary" />,
+        title: "Loyalty Program",
+        description: "Join our loyalty program and get every 6th wash for free. We love our regulars!",
     }
 ]
 
@@ -28,7 +33,7 @@ export default function Offers() {
             Take advantage of our special offers and give your car the shine it deserves.
           </p>
         </div>
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
           {offers.map((offer, index) => (
             <Card key={index} className="rounded-2xl shadow-lg">
                 <CardHeader className="flex flex-row items-center gap-4">

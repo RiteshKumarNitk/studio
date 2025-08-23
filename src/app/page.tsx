@@ -12,6 +12,7 @@ import Testimonials from '@/components/landing/testimonials';
 import Contact from '@/components/landing/contact';
 import Footer from '@/components/landing/footer';
 import HomePageSkeleton from '@/components/landing/home-page-skeleton';
+import Gallery from '@/components/landing/gallery';
 
 function HomeComponent() {
   return (
@@ -24,6 +25,7 @@ function HomeComponent() {
         <Pricing />
         <Offers />
         <Services />
+        <Gallery />
         <Testimonials />
         <Contact />
       </main>

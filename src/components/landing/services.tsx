@@ -5,13 +5,8 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Sparkles, WandSparkles, Droplets, Wind, Gauge } from 'lucide-react';
+import { Sparkles, WandSparkles, Droplets, Wind, Gauge, Car, SprayCan } from 'lucide-react';
 import TireIcon from '@/components/icons/tire-icon';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from '@/components/ui/carousel';
 
 const services = [
   { icon: <Sparkles className="h-8 w-8" />, name: 'Deep Cleaning' },
@@ -22,10 +17,10 @@ const services = [
   { icon: <Gauge className="h-8 w-8" />, name: 'Dashboard Polish' },
   { icon: <Sparkles className="h-8 w-8" />, name: 'Exterior Waxing' },
   { icon: <WandSparkles className="h-8 w-8" />, name: 'Headlight Restoration' },
-  { icon: <Sparkles className="h-8 w-8" />, name: 'Deep Cleaning' },
-  { icon: <WandSparkles className="h-8 w-8" />, name: 'Polishing' },
-  { icon: <Droplets className="h-8 w-8" />, name: 'Waterless Wash' },
-  { icon: <Wind className="h-8 w-8" />, name: 'Interior Vacuuming' },
+  { icon: <Car className="h-8 w-8" />, name: 'Ceramic Coating' },
+  { icon: <SprayCan className="h-8 w-8" />, name: 'Odor Removal' },
+  { icon: <Sparkles className="h-8 w-8" />, name: 'Engine Bay Cleaning' },
+  { icon: <WandSparkles className="h-8 w-8" />, name: 'Glass Polishing' },
 ];
 
 export default function Services() {

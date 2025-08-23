@@ -14,25 +14,39 @@ import Link from 'next/link';
 
 const testimonials = [
   {
-    name: 'Rajesh',
+    name: 'Rajesh K.',
     quote: "My car had more dust than my childhood toys! After Bubble Drive, it looks brand new. The team was professional and the result was just fantastic.",
     avatar: 'https://placehold.co/100x100',
-    initials: 'R',
-    handle: '@rajesh'
+    initials: 'RK',
+    handle: '@rajeshk'
   },
   {
-    name: 'Priya',
-    quote: "I didn’t know my car could look this good! The 'Classic Clean' plan is worth every single penny. So convenient and the quality is top-notch.",
+    name: 'Priya S.',
+    quote: "I didn’t know my car could look this good! The 'Super Shine' plan is worth every single penny. So convenient and the quality is top-notch.",
     avatar: 'https://placehold.co/100x100',
-    initials: 'P',
-    handle: '@priya'
+    initials: 'PS',
+    handle: '@priyas'
   },
   {
-    name: 'Amit',
+    name: 'Amit V.',
     quote: "The eco-friendly aspect is what drew me in, and the service quality is what made me stay. My car has never been happier, and neither have I!",
     avatar: 'https://placehold.co/100x100',
-    initials: 'A',
-    handle: '@amit'
+    initials: 'AV',
+    handle: '@amitv'
+  },
+  {
+    name: 'Sunita M.',
+    quote: "As a busy professional, I barely have time for anything. Bubble Drive is a lifesaver. They come to my office and my car is sparkling when I leave.",
+    avatar: 'https://placehold.co/100x100',
+    initials: 'SM',
+    handle: '@sunitam'
+  },
+  {
+    name: 'Vikram B.',
+    quote: "Absolutely phenomenal service! They even got out the stubborn stains on my seats. The 'Ultimate Glow' is the real deal. Highly recommend!",
+    avatar: 'https://placehold.co/100x100',
+    initials: 'VB',
+    handle: '@vikramb'
   },
 ];
 

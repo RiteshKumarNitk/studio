@@ -31,7 +31,7 @@ export default function About() {
             Who We Are
           </h2>
           <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            We're not just car washers; we're car lovers. Bubble Drive started with a simple idea: what if getting your car washed was as easy as ordering a pizza? We noticed our friends and family struggling to find time for car care, driving around with dusty bonnets and smudged windows. So, we created a service that brings the sparkle to your doorstep. We use eco-friendly products because we love our planet as much as we love clean cars. Our team is a bunch of friendly, trained professionals who believe a clean car equals a happy driver.
+            We're not just car washers; we're car lovers. Bubble Drive started with a simple idea: what if getting your car washed was as easy as ordering a pizza? We noticed our friends and family struggling to find time for car care, driving around with dusty bonnets and smudged windows. So, we created a service that brings the sparkle to your doorstep. We use eco-friendly products because we love our planet as much as we love clean cars. Our team is a bunch of friendly, trained professionals who believe a clean car equals a happy driver. Our mission is to provide a convenient, high-quality, and environmentally responsible car wash service that leaves you with a smile and a car that looks and feels brand new.
           </p>
         </motion.div>
         <motion.div

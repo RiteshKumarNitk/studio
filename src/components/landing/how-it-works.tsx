@@ -1,24 +1,29 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CalendarClock, Leaf, ShieldCheck } from 'lucide-react';
+import { CalendarClock, Leaf, ShieldCheck, Car } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const features = [
   {
     icon: <CalendarClock className="h-10 w-10 text-primary" />,
-    title: 'Scheduled Doorstep Visits',
+    title: 'Book Your Service',
     description: 'Pick a time that works for you, and we’ll be there. No waiting, no hassle.',
   },
   {
     icon: <ShieldCheck className="h-10 w-10 text-primary" />,
-    title: 'Trained & Verified Specialists',
+    title: 'Expert Car Care',
     description: 'Our car care experts are skilled, trustworthy, and dedicated to making your car shine.',
   },
   {
     icon: <Leaf className="h-10 w-10 text-primary" />,
     title: 'Eco-Friendly Washing',
     description: 'We use water-saving techniques and biodegradable products to protect our planet.',
+  },
+   {
+    icon: <Car className="h-10 w-10 text-primary" />,
+    title: 'Enjoy Your Ride',
+    description: 'Drive away in a car that looks, smells, and feels brand new. Pure satisfaction.',
   },
 ];
 
@@ -58,11 +63,11 @@ export default function HowItWorks() {
             How We Make Magic Happen
           </h2>
           <p className="mt-4 text-muted-foreground md:text-xl">
-            A simple, three-step process to a sparkling clean car.
+            A simple, four-step process to a sparkling clean car.
           </p>
         </motion.div>
         <motion.div
-          className="mt-12 grid gap-8 md:grid-cols-3"
+          className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
