@@ -46,7 +46,7 @@ export default function About() {
                 alt="Clean vs Dusty Car"
                 className="aspect-video w-full object-cover"
                 height="400"
-                src="https://placehold.co/600x400"
+                src="https://images.pexels.com/photos/6872601/pexels-photo-6872601.jpeg"
                 data-ai-hint="clean car shiny"
                 width="600"
               />

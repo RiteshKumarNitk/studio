@@ -1,68 +1,119 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Sparkles, WandSparkles, Droplets, Wind, Gauge, Car, SprayCan } from 'lucide-react';
-import TireIcon from '@/components/icons/tire-icon';
+import { motion } from "framer-motion";
+import {
+  Sparkles,
+  WandSparkles,
+  Droplets,
+  Wind,
+  Car,
+  SprayCan,
+  Gauge,
+} from "lucide-react";
 
+// ✅ Updated services list with descriptions
 const services = [
-  { icon: <Sparkles className="h-8 w-8" />, name: 'Deep Cleaning' },
-  { icon: <WandSparkles className="h-8 w-8" />, name: 'Polishing' },
-  { icon: <Droplets className="h-8 w-8" />, name: 'Waterless Wash' },
-  { icon: <Wind className="h-8 w-8" />, name: 'Interior Vacuuming' },
-  { icon: <TireIcon className="h-8 w-8" />, name: 'Tire Polish' },
-  { icon: <Gauge className="h-8 w-8" />, name: 'Dashboard Polish' },
-  { icon: <Sparkles className="h-8 w-8" />, name: 'Exterior Waxing' },
-  { icon: <WandSparkles className="h-8 w-8" />, name: 'Headlight Restoration' },
-  { icon: <Car className="h-8 w-8" />, name: 'Ceramic Coating' },
-  { icon: <SprayCan className="h-8 w-8" />, name: 'Odor Removal' },
-  { icon: <Sparkles className="h-8 w-8" />, name: 'Engine Bay Cleaning' },
-  { icon: <WandSparkles className="h-8 w-8" />, name: 'Glass Polishing' },
+  {
+    icon: <Sparkles className="h-10 w-10" />,
+    name: "Deep Cleaning",
+    desc: "Thorough inside-out cleaning for a fresh look.",
+  },
+  {
+    icon: <WandSparkles className="h-10 w-10" />,
+    name: "Polishing",
+    desc: "Restores shine and removes fine scratches.",
+  },
+  {
+    icon: <Droplets className="h-10 w-10" />,
+    name: "Waterless Wash",
+    desc: "Eco-friendly cleaning with minimal water usage.",
+  },
+  {
+    icon: <Wind className="h-10 w-10" />,
+    name: "Interior Vacuuming",
+    desc: "Removes dust and debris from seats & carpets.",
+  },
+  {
+    icon: <Sparkles className="h-10 w-10" />,
+    name: "Tire Polish",
+    desc: "Keeps your tires looking shiny and brand new.",
+  },
+  {
+    icon: <Gauge className="h-10 w-10" />,
+    name: "Dashboard Polish",
+    desc: "Protects & restores dashboard shine.",
+  },
+  // {
+  //   icon: <Sparkles className="h-10 w-10" />,
+  //   name: "Exterior Waxing",
+  //   desc: "Gives long-lasting paint protection & gloss.",
+  // },
+  // {
+  //   icon: <WandSparkles className="h-10 w-10" />,
+  //   name: "Headlight Restoration",
+  //   desc: "Improves brightness by removing fog & yellowing.",
+  // },
+  // {
+  //   icon: <Car className="h-10 w-10" />,
+  //   name: "Ceramic Coating",
+  //   desc: "Premium nano-protection for your car’s paint.",
+  // },
+  // {
+  //   icon: <SprayCan className="h-10 w-10" />,
+  //   name: "Odor Removal",
+  //   desc: "Removes stubborn odors and refreshes air.",
+  // },
+  // {
+  //   icon: <Sparkles className="h-10 w-10" />,
+  //   name: "Engine Bay Cleaning",
+  //   desc: "Safe engine cleaning for better performance.",
+  // },
+  // {
+  //   icon: <WandSparkles className="h-10 w-10" />,
+  //   name: "Glass Polishing",
+  //   desc: "Crystal-clear finish for all glass surfaces.",
+  // },
 ];
 
-export default function Services() {
-  const targetRef = React.useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ['start end', 'end start'],
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-50%']);
-
+export default function ServicesGrid() {
   return (
-    <section id="services" ref={targetRef} className="w-full bg-secondary relative h-[150vh]">
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 flex flex-col justify-center h-full">
-            <div className="mx-auto max-w-2xl text-center mb-12">
-              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Our Services
-              </h2>
-              <p className="mt-4 text-muted-foreground md:text-xl">
-                From a quick wash to a full detail, we've got you covered.
-              </p>
-            </div>
-            <motion.div style={{ x }} className="flex gap-4">
-              {services.map((service, index) => (
-                  <div key={index} className="flex-shrink-0 w-[250px] sm:w-[300px] p-2">
-                    <Card className="group h-full overflow-hidden rounded-2xl text-center transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:-translate-y-2">
-                      <CardContent className="flex h-full flex-col items-center justify-center gap-4 p-6">
-                        <div className="text-primary group-hover:text-primary-foreground">
-                          {service.icon}
-                        </div>
-                        <h3 className="font-semibold">{service.name}</h3>
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
+    <section className="relative w-full py-16 bg-gradient-to-b from-gray-50 to-white">
+      <div className="mx-auto max-w-6xl px-4">
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-bold text-center mb-12 text-gray-800"
+        >
+          Our Premium Services
+        </motion.h2>
+
+        {/* ✅ Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.05, rotate: 1 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.08 }}
+              className="flex flex-col items-center text-center rounded-2xl bg-white shadow-md p-8 cursor-pointer hover:shadow-xl hover:bg-blue-50 group"
+            >
+              {/* Icon */}
+              <div className="text-blue-600 mb-4 group-hover:animate-bounce">
+                {service.icon}
+              </div>
+
+              {/* Title */}
+              <h3 className="text-lg font-semibold mb-2 text-gray-700 group-hover:text-blue-600">
+                {service.name}
+              </h3>
+
+              {/* Description */}
+              <p className="text-sm text-gray-500">{service.desc}</p>
             </motion.div>
-            <div className="mt-12 text-center">
-              <Button asChild size="lg" className="font-bold">
-                <Link href="#plans">Let's Get That Shine</Link>
-              </Button>
-            </div>
+          ))}
         </div>
       </div>
     </section>

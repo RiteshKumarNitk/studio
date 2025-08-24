@@ -11,21 +11,21 @@ import { motion } from 'framer-motion';
 const plans = [
   {
     name: 'Quick Sparkle',
-    price: '₹499',
+    price: '499',
     duration: 'per wash',
     features: ['Exterior Wash', 'Tire Shine', 'Window Cleaning'],
     popular: false,
   },
   {
     name: 'Super Shine',
-    price: '₹999',
+    price: '999',
     duration: 'per wash',
     features: ['Everything in Quick Sparkle', 'Interior Vacuuming', 'Dashboard Polish'],
     popular: true,
   },
   {
     name: 'Ultimate Glow',
-    price: '₹1499',
+    price: '1499',
     duration: 'per wash',
     features: ['Everything in Super Shine', 'Deep Upholstery Clean', 'Protective Wax Coating'],
     popular: false,

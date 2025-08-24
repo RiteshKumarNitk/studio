@@ -6,12 +6,12 @@ import { Button } from '@/components/ui/button';
 
 export default function Hero() {
   return (
-    <section
+ <section
       id="home"
-      className="relative flex h-[80vh] min-h-[500px] w-full items-center justify-center overflow-hidden text-center"
+      className="relative flex h-[calc(100vh-80px)] w-full items-center justify-center overflow-hidden"
     >
       <Image
-        src="https://placehold.co/1920x1080"
+        src="https://images.pexels.com/photos/6872156/pexels-photo-6872156.jpeg"
         alt="Car being washed"
         data-ai-hint="car wash background"
         fill
