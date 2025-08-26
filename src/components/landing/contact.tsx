@@ -126,7 +126,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
             Have questions or want to schedule a wash? We'd love to hear from you.
           </p>
         </div>
-        <div className="mx-auto mt-12 max-w-xl">
+        <div className="mx-auto mt-12 max-w-2xl">
           <Card className="shadow-lg rounded-2xl">
             <CardHeader>
               <CardTitle>Send us a Message</CardTitle>

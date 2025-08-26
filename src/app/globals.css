@@ -54,7 +54,8 @@
     --primary-foreground: 0 0% 100%;
     --secondary: 215 30% 92%;
     --secondary-foreground: 220 25% 15%;
-    --accent: 260 60% 55%; /* Indigo accent option */
+
+    --accent: 32 100% 50%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
@@ -112,7 +113,7 @@
     --primary-foreground: 0 0% 100%;
     --secondary: 220 20% 20%;
     --secondary-foreground: 210 40% 96%;
-    --accent: 260 60% 55%;
+    --accent: 32 100% 50%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 65% 40%;
     --destructive-foreground: 0 0% 100%;
