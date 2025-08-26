@@ -49,7 +49,7 @@ export default function Contact() {
     }
     
     // IMPORTANT: Replace with your actual phone number including country code
-    const yourPhoneNumber = '910000000000'; 
+    const yourPhoneNumber = '918946887702'; 
     const prefilledMessage = `Hello, my name is ${name}. My email is ${email}.\n\nMessage: ${message}`;
     const whatsappUrl = `https://wa.me/${yourPhoneNumber}?text=${encodeURIComponent(prefilledMessage)}`;
     
