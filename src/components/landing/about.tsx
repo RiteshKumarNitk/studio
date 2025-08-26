@@ -9,7 +9,7 @@ export default function About() {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
-  
+
   const bubbles = Array.from({ length: 10 });
 
   return (
@@ -23,32 +23,35 @@ export default function About() {
     >
         {/* Bubbles Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        {bubbles.map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute bg-primary/20 rounded-full"
-            initial={{
-              bottom: -50,
-              left: `${Math.random() * 100}%`,
-              scale: Math.random() * 0.8 + 0.2,
-              opacity: Math.random() * 0.4 + 0.1,
-            }}
-            animate={{
-              bottom: '100%',
-              transition: {
-                duration: Math.random() * 15 + 10,
-                repeat: Infinity,
-                repeatType: 'loop',
-                ease: 'linear',
-                delay: Math.random() * 8,
-              },
-            }}
-            style={{
-              width: `${Math.random() * 80 + 30}px`,
-              height: `${Math.random() * 80 + 30}px`,
-            }}
-          />
-        ))}
+        {bubbles.map((_, i) => {
+          const size = Math.random() * 80 + 30;
+          return (
+            <motion.div
+              key={i}
+              className="absolute bg-primary/20 rounded-full"
+              initial={{
+                bottom: -50,
+                left: `${Math.random() * 100}%`,
+                scale: Math.random() * 0.8 + 0.2,
+                opacity: Math.random() * 0.4 + 0.1,
+              }}
+              animate={{
+                bottom: '100%',
+                transition: {
+                  duration: Math.random() * 15 + 10,
+                  repeat: Infinity,
+                  repeatType: 'loop',
+                  ease: 'linear',
+                  delay: Math.random() * 8,
+                },
+              }}
+              style={{
+                width: `${size}px`,
+                height: `${size}px`,
+              }}
+            />
+          );
+        })}
       </div>
 
       <div className="container mx-auto grid items-center gap-8 px-8 md:grid-cols-2 md:px-12 lg:gap-16 relative z-10">
