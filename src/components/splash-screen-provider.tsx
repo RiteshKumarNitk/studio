@@ -10,11 +10,14 @@ export default function SplashScreenProvider({
 }: {
   children: React.ReactNode;
 }) {
+  const [isClient, setIsClient] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [showPromotion, setShowPromotion] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setIsClient(true);
+
+    const loadingTimer = setTimeout(() => {
       setIsLoading(false);
     }, 2000); // Show splash screen for 2 seconds
 
@@ -28,10 +31,14 @@ export default function SplashScreenProvider({
     }, 3000);
 
     return () => {
-        clearTimeout(timer);
+        clearTimeout(loadingTimer);
         clearTimeout(promotionTimer);
     }
   }, []);
+
+  if (!isClient) {
+    return null; // Render nothing on the server
+  }
 
   if (isLoading) {
     return <SplashScreen />;
@@ -42,5 +49,5 @@ export default function SplashScreenProvider({
         {children}
         <PromotionalDialog show={showPromotion} onHide={() => setShowPromotion(false)} />
     </>
-    );
+  );
 }
