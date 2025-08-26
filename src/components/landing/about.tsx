@@ -26,7 +26,7 @@ export default function About() {
         {bubbles.map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full"
+            className="absolute bg-primary/20 rounded-full"
             initial={{
               bottom: -50,
               left: `${Math.random() * 100}%`,
@@ -46,7 +46,6 @@ export default function About() {
             style={{
               width: `${Math.random() * 80 + 30}px`,
               height: `${Math.random() * 80 + 30}px`,
-              background: 'radial-gradient(circle at 30% 30%, hsl(var(--primary) / 0.3), hsl(var(--primary) / 0.1))',
             }}
           />
         ))}
