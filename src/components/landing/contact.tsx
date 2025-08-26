@@ -6,16 +6,21 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Loader2, Send, MessageCircle, Star } from 'lucide-react';
+import { Loader2, Send, MessageCircle, Star, CalendarIcon } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Calendar } from '@/components/ui/calendar';
+import { cn } from '@/lib/utils';
+import { format } from 'date-fns';
 
 const plans = ['Quick Sparkle', 'Super Shine', 'Ultimate Glow'];
 
 export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPlan: string | null; setSelectedPlan: (plan: string | null) => void; }) {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', carModel: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', carModel: '', message: '' });
+  const [date, setDate] = useState<Date | undefined>(undefined);
 
   useEffect(() => {
     if (selectedPlan) {
@@ -54,7 +59,8 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     setIsLoading(false);
     
     // Reset form fields
-    setFormData({ name: '', email: '', phone: '', carModel: '', message: '' });
+    setFormData({ name: '', phone: '', carModel: '', message: '' });
+    setDate(undefined);
     if (selectedPlan) {
       setSelectedPlan(null);
     }
@@ -67,7 +73,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
   };
 
   const handleWhatsAppSend = () => {
-    const { name, email, phone, carModel, message } = formData;
+    const { name, phone, carModel, message } = formData;
     if (!name || !message) {
       toast({
         variant: "destructive",
@@ -80,9 +86,6 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     const yourPhoneNumber = '918946887702'; 
     
     let prefilledMessage = `Hello, my name is ${name}.`;
-    if (email) {
-      prefilledMessage += ` My email is ${email}.`;
-    }
     if(phone) {
         prefilledMessage += ` My phone number is ${phone}.`;
     }
@@ -91,6 +94,9 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     }
     if (selectedPlan) {
       prefilledMessage += `\nI'm interested in the '${selectedPlan}' plan.`;
+    }
+    if (date) {
+      prefilledMessage += `\nI'd like to schedule for: ${format(date, "PPP")}.`;
     }
     prefilledMessage += `\n\nMessage: ${message}`;
 
@@ -106,9 +112,9 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
 
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-xl space-y-4 text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">Contact Us</h2>
+          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">Book Your Wash</h2>
           <p className="text-muted-foreground md:text-xl">
-            Have questions? We'd love to hear from you.
+            Have questions or want to schedule a wash? We'd love to hear from you.
           </p>
         </div>
         <div className="mx-auto mt-12 max-w-lg">
@@ -137,15 +143,9 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name</Label>
-                      <Input id="name" placeholder="Enter your name" required value={formData.name} onChange={handleInputChange} />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" placeholder="Enter your email" required value={formData.email} onChange={handleInputChange} />
-                    </div>
+                <div className="space-y-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" placeholder="Enter your name" required value={formData.name} onChange={handleInputChange} />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
@@ -169,6 +169,31 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
                             </SelectContent>
                         </Select>
                     </div>
+                </div>
+                 <div className="space-y-2">
+                  <Label htmlFor="date">Schedule Wash</Label>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button
+                        variant={"outline"}
+                        className={cn(
+                          "w-full justify-start text-left font-normal",
+                          !date && "text-muted-foreground"
+                        )}
+                      >
+                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        {date ? format(date, "PPP") : <span>Pick a date</span>}
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0">
+                      <Calendar
+                        mode="single"
+                        selected={date}
+                        onSelect={setDate}
+                        initialFocus
+                      />
+                    </PopoverContent>
+                  </Popover>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
