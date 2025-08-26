@@ -73,6 +73,8 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
+        'icon-primary': 'hsl(var(--icon-primary))',
+        'icon-secondary': 'hsl(var(--icon-secondary))',
       },
       borderRadius: {
         lg: 'var(--radius)',
