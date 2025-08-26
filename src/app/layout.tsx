@@ -5,6 +5,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import SplashScreenProvider from "@/components/splash-screen-provider";
 import Cursor from "@/components/ui/cursor";
+import PromotionalBanner from "@/components/landing/promotional-banner";
 
 export const metadata: Metadata = {
   title: "Bubble Drive",
@@ -49,6 +50,7 @@ export default function RootLayout({
       <body className="font-body antialiased bg-white text-gray-900 relative">
         <SplashScreenProvider>{children}</SplashScreenProvider>
         <Toaster />
+        <PromotionalBanner />
         {/* Custom motion cursor (hidden on touch devices) */}
         <div className="hidden md:block">
           <Cursor />
