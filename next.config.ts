@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },images: {
-  dangerouslyAllowSVG: true,  // 👈 add this
+  dangerouslyAllowSVG: true,
   remotePatterns: [
     {
       protocol: 'https',

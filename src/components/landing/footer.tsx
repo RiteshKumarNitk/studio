@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { Facebook, Instagram, MessageCircle, Sparkles } from 'lucide-react';
+import { Facebook, Instagram, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -8,8 +9,7 @@ export default function Footer() {
       <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:px-6">
         <div className="flex flex-col items-start gap-4">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
-            <Sparkles className="h-8 w-8 text-primary" />
-            <span className="font-headline text-2xl font-bold">Bubble Drive</span>
+            <Image src="/logo-dark.png" alt="Bubble Drive Logo" width={150} height={40} />
           </Link>
           <p className="max-w-xs text-sm text-muted-foreground">
             We Make Your Car Shine Again
