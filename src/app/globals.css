@@ -4,48 +4,118 @@
 
 @layer base {
   :root {
-    --background: 202 82% 95%;
-    --foreground: 224 71% 4%;
+    /* Base & Page */
+    --background: 202 82% 95%; /* Light baby blue */
+    --foreground: 224 71% 4%; /* Dark Navy */
+
+    /* Text */
+    --text-primary: 224 71% 4%; /* Dark Navy */
+    --text-secondary: 215.4 16.3% 46.9%; /* Muted Gray */
+    --text-accent: 195 53% 50%; /* A slightly stronger blue for links/highlights */
+    --text-on-primary: 224 71% 4%; /* Text on primary backgrounds */
+    --text-on-secondary: 224 71% 4%; /* Text on secondary backgrounds */
+    --text-destructive: 0 84.2% 60.2%;
+    
+    /* Borders & Rings */
+    --border: 214.3 31.8% 91.4%; /* Light gray-blue */
+    --ring: 195 53% 79%; /* Light blue for focus rings */
+    --separator: 214.3 31.8% 85.4%;
+
+    /* Components */
     --card: 0 0% 100%;
     --card-foreground: 224 71% 4%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 71% 4%;
+    --secondary-background: 210 40% 96.1%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --input: 214.3 31.8% 91.4%;
+
+    /* Buttons */
+    --button-primary-background: 195 53% 79%; /* Current primary color */
+    --button-primary-foreground: 224 71% 4%;
+    --button-secondary-background: 210 40% 96.1%;
+    --button-secondary-foreground: 224 71% 4%;
+    --button-destructive-background: 0 84.2% 60.2%;
+    --button-destructive-foreground: 0 0% 98%;
+
+    /* Icons */
+    --icon-primary: 195 53% 79%;
+    --icon-secondary: 215.4 16.3% 46.9%;
+
+    /* Header & Footer */
+    --header-background: 202 82% 95%;
+    --header-foreground: 224 71% 4%;
+    --footer-background: 224 71% 4%;
+    --footer-foreground: 210 40% 98%;
+    
+    /* Legacy variables - will be phased out but kept for compatibility for now */
     --primary: 195 53% 79%;
     --primary-foreground: 224 71% 4%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 224 71% 4%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
     --accent: 0 0% 75%;
     --accent-foreground: 224 71% 4%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 195 53% 79%;
     --radius: 0.8rem;
   }
 
   .dark {
+    /* Base & Page */
     --background: 224 71% 4%;
     --foreground: 210 40% 98%;
+
+    /* Text */
+    --text-primary: 210 40% 98%;
+    --text-secondary: 215 20.2% 65.1%;
+    --text-accent: 195 53% 79%;
+    --text-on-primary: 224 71% 4%;
+    --text-on-secondary: 210 40% 98%;
+    --text-destructive: 0 62.8% 30.6%;
+
+    /* Borders & Rings */
+    --border: 217.2 32.6% 17.5%;
+    --ring: 195 53% 79%;
+    --separator: 217.2 32.6% 25.5%;
+
+    /* Components */
     --card: 224 71% 4%;
     --card-foreground: 210 40% 98%;
     --popover: 224 71% 4%;
     --popover-foreground: 210 40% 98%;
+    --secondary-background: 217.2 32.6% 17.5%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --input: 217.2 32.6% 17.5%;
+
+    /* Buttons */
+    --button-primary-background: 195 53% 79%;
+    --button-primary-foreground: 224 71% 4%;
+    --button-secondary-background: 217.2 32.6% 17.5%;
+    --button-secondary-foreground: 210 40% 98%;
+    --button-destructive-background: 0 62.8% 30.6%;
+    --button-destructive-foreground: 210 40% 98%;
+
+    /* Icons */
+    --icon-primary: 195 53% 79%;
+    --icon-secondary: 215 20.2% 65.1%;
+
+    /* Header & Footer */
+    --header-background: 224 71% 4%;
+    --header-foreground: 210 40% 98%;
+    --footer-background: 210 40% 98%;
+    --footer-foreground: 224 71% 4%;
+
+    /* Legacy variables */
     --primary: 195 53% 79%;
     --primary-foreground: 224 71% 4%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
     --accent: 0 0% 75%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 195 53% 79%;
   }
 }
 
@@ -63,84 +133,3 @@
     @apply py-16 sm:py-20 md:py-24;
   }
 }
-
-
-
-/* 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    --background: #e6f0fa; /* was 202 82% 95% 
-    --foreground: #0b0e14; /* was 224 71% 4% 
-    --card: #ffffff;
-    --card-foreground: #0b0e14;
-    --popover: #ffffff;
-    --popover-foreground: #0b0e14;
-
-    --primary: #2cabe2; /* 🔵 Blue
-    --primary-foreground: #ffffff;
-
-    --secondary: #ff9000; /* 🟠 Orange 
-    --secondary-foreground: #ffffff;
-
-    --muted: #f1f5f9; /* light gray
-    --muted-foreground: #64748b;
-
-    --accent: #bfbfbf; /* neutral gray
-    --accent-foreground: #0b0e14;
-
-    --destructive: #ef4444; /* red-500 
-    --destructive-foreground: #ffffff;
-
-    --border: #e2e8f0; /* slate-200 
-    --input: #e2e8f0;
-    --ring: #2cabe2; /* primary blue
-    --radius: 0.8rem;
-  }
-
-  .dark {
-    --background: #0b0e14;
-    --foreground: #f8fafc;
-    --card: #0b0e14;
-    --card-foreground: #f8fafc;
-    --popover: #0b0e14;
-    --popover-foreground: #f8fafc;
-
-    --primary: #2cabe2; /* 🔵 Blue 
-    --primary-foreground: #0b0e14;
-
-    --secondary: #ff9000; /* 🟠 Orange 
-    --secondary-foreground: #0b0e14;
-
-    --muted: #1e293b; /* slate-800 
-    --muted-foreground: #94a3b8; /* slate-400 
-
-    --accent: #bfbfbf; 
-    --accent-foreground: #f8fafc;
-
-    --destructive: #991b1b; /* red-800 
-    --destructive-foreground: #f8fafc;
-
-    --border: #1e293b;
-    --input: #1e293b;
-    --ring: #2cabe2;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  section {
-    @apply py-16 sm:py-20 md:py-24;
-  }
-} */
