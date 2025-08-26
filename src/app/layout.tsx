@@ -6,7 +6,7 @@ import SplashScreenProvider from "@/components/splash-screen-provider";
 import Cursor from "@/components/ui/cursor";
 
 export const metadata: Metadata = {
-  title: "Bubble Drive – Daily Dust, Leave It to Us",
+  title: "Bubble Drive",
   description:
     "Your car deserves better than dust. We’ll take care of it. Eco-friendly doorstep car wash service.",
   keywords: ["car wash", "eco-friendly", "doorstep service", "car cleaning", "subscription"],
