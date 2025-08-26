@@ -6,14 +6,20 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Loader2, Send } from 'lucide-react';
+import { Loader2, Send, MessageCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
@@ -22,8 +28,8 @@ export default function Contact() {
     
     setIsLoading(false);
     
-    // Reset form fields (if you control them with state)
-    (e.target as HTMLFormElement).reset();
+    // Reset form fields
+    setFormData({ name: '', email: '', message: '' });
 
     toast({
       title: 'Message Sent!',
@@ -31,6 +37,24 @@ export default function Contact() {
     });
   };
 
+  const handleWhatsAppSend = () => {
+    const { name, email, message } = formData;
+    if (!name || !message) {
+      toast({
+        variant: "destructive",
+        title: 'Fields Missing',
+        description: 'Please enter your name and a message to send via WhatsApp.',
+      });
+      return;
+    }
+    
+    // IMPORTANT: Replace with your actual phone number including country code
+    const yourPhoneNumber = '910000000000'; 
+    const prefilledMessage = `Hello, my name is ${name}. My email is ${email}.\n\nMessage: ${message}`;
+    const whatsappUrl = `https://wa.me/${yourPhoneNumber}?text=${encodeURIComponent(prefilledMessage)}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
     <section id="contact" className="w-full relative overflow-hidden py-16 sm:py-20 md:py-24">
@@ -51,31 +75,37 @@ export default function Contact() {
               <CardDescription>Fill out the form below and we'll get back to you.</CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4" onSubmit={handleSubmit}>
+              <form className="space-y-4" onSubmit={handleFormSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name</Label>
-                      <Input id="name" placeholder="Enter your name" required />
+                      <Input id="name" placeholder="Enter your name" required value={formData.name} onChange={handleInputChange} />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" placeholder="Enter your email" required />
+                      <Input id="email" type="email" placeholder="Enter your email" required value={formData.email} onChange={handleInputChange} />
                     </div>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="Your message" required className="min-h-[120px]" />
+                  <Textarea id="message" placeholder="Your message" required className="min-h-[120px]" value={formData.message} onChange={handleInputChange} />
                 </div>
-                <Button type="submit" size="lg" className="w-full font-bold" disabled={isLoading}>
-                  {isLoading ? (
-                    <Loader2 className="animate-spin" />
-                  ) : (
-                    <>
-                      <Send className="mr-2" />
-                      Send Message
-                    </>
-                  )}
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Button type="submit" size="lg" className="w-full font-bold" disabled={isLoading}>
+                    {isLoading ? (
+                      <Loader2 className="animate-spin" />
+                    ) : (
+                      <>
+                        <Send className="mr-2" />
+                        Send Message
+                      </>
+                    )}
+                  </Button>
+                  <Button type="button" size="lg" className="w-full font-bold bg-green-500 hover:bg-green-600 text-white" onClick={handleWhatsAppSend}>
+                    <MessageCircle className="mr-2" />
+                    Send via WhatsApp
+                  </Button>
+                </div>
               </form>
             </CardContent>
           </Card>

@@ -13,6 +13,7 @@ import Contact from '@/components/landing/contact';
 import Footer from '@/components/landing/footer';
 import HomePageSkeleton from '@/components/landing/home-page-skeleton';
 import Gallery from '@/components/landing/gallery';
+import Location from '@/components/landing/location';
 
 function HomeComponent() {
   return (
@@ -27,6 +28,7 @@ function HomeComponent() {
         <Services />
         <Gallery />
         <Testimonials />
+        <Location />
         <Contact />
       </main>
       <Footer />
