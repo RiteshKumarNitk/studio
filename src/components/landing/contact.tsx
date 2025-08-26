@@ -1,18 +1,27 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Loader2, Send, MessageCircle } from 'lucide-react';
+import { Loader2, Send, MessageCircle, Star } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
-export default function Contact() {
+export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPlan: string | null; setSelectedPlan: (plan: string | null) => void; }) {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  useEffect(() => {
+    if (selectedPlan) {
+      setFormData((prev) => ({
+        ...prev,
+        message: `I'm interested in the '${selectedPlan}' plan.`,
+      }));
+    }
+  }, [selectedPlan]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -30,6 +39,10 @@ export default function Contact() {
     
     // Reset form fields
     setFormData({ name: '', email: '', message: '' });
+    if (selectedPlan) {
+      setSelectedPlan(null);
+    }
+
 
     toast({
       title: 'Message Sent!',
@@ -48,9 +61,17 @@ export default function Contact() {
       return;
     }
     
-    // IMPORTANT: Replace with your actual phone number including country code
-    const yourPhoneNumber = '919461603054'; 
-    const prefilledMessage = `Hello, my name is ${name}. My email is ${email}.\n\nMessage: ${message}`;
+    const yourPhoneNumber = '918946887702'; 
+    
+    let prefilledMessage = `Hello, my name is ${name}.`;
+    if (email) {
+      prefilledMessage += ` My email is ${email}.`;
+    }
+    if (selectedPlan) {
+      prefilledMessage += `\nI'm interested in the '${selectedPlan}' plan.`;
+    }
+    prefilledMessage += `\n\nMessage: ${message}`;
+
     const whatsappUrl = `https://wa.me/${yourPhoneNumber}?text=${encodeURIComponent(prefilledMessage)}`;
     
     window.open(whatsappUrl, '_blank');
@@ -76,6 +97,15 @@ export default function Contact() {
             </CardHeader>
             <CardContent>
               <form className="space-y-4" onSubmit={handleFormSubmit}>
+                {selectedPlan && (
+                  <div className="space-y-2">
+                    <Label htmlFor="plan">Selected Plan</Label>
+                    <div className="flex h-10 w-full items-center rounded-md border border-input bg-muted px-3 py-2 text-sm">
+                      <Star className="mr-2 h-4 w-4 text-icon-primary" />
+                      {selectedPlan}
+                    </div>
+                  </div>
+                )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name</Label>
