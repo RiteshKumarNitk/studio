@@ -21,6 +21,8 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
   const { toast } = useToast();
   const [formData, setFormData] = useState({ name: '', phone: '', carModel: '', message: '' });
   const [date, setDate] = useState<Date | undefined>(undefined);
+  const [isCalendarOpen, setCalendarOpen] = useState(false);
+
 
   useEffect(() => {
     if (selectedPlan) {
@@ -48,6 +50,13 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
   const handleCarModelChange = (value: string) => {
     setFormData((prev) => ({...prev, carModel: value}));
   }
+
+  const handleDateSelect = (selectedDate?: Date) => {
+    setDate(selectedDate);
+    if (selectedDate) {
+      setCalendarOpen(false); // Close calendar on date selection
+    }
+  };
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -117,7 +126,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
             Have questions or want to schedule a wash? We'd love to hear from you.
           </p>
         </div>
-        <div className="mx-auto mt-12 max-w-lg">
+        <div className="mx-auto mt-12 max-w-xl">
           <Card className="shadow-lg rounded-2xl">
             <CardHeader>
               <CardTitle>Send us a Message</CardTitle>
@@ -172,7 +181,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
                 </div>
                  <div className="space-y-2">
                   <Label htmlFor="date">Schedule Wash</Label>
-                  <Popover>
+                  <Popover open={isCalendarOpen} onOpenChange={setCalendarOpen}>
                     <PopoverTrigger asChild>
                       <Button
                         variant={"outline"}
@@ -189,7 +198,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
                       <Calendar
                         mode="single"
                         selected={date}
-                        onSelect={setDate}
+                        onSelect={handleDateSelect}
                         initialFocus
                       />
                     </PopoverContent>
