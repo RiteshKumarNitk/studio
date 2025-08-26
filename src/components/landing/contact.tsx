@@ -8,11 +8,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Loader2, Send, MessageCircle, Star } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPlan: string | null; setSelectedPlan: (plan: string | null) => void; }) {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', carModel: '', message: '' });
 
   useEffect(() => {
     if (selectedPlan) {
@@ -28,6 +29,10 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
+  const handleCarModelChange = (value: string) => {
+    setFormData((prev) => ({...prev, carModel: value}));
+  }
+
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
@@ -38,7 +43,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     setIsLoading(false);
     
     // Reset form fields
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', carModel: '', message: '' });
     if (selectedPlan) {
       setSelectedPlan(null);
     }
@@ -51,7 +56,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
   };
 
   const handleWhatsAppSend = () => {
-    const { name, email, message } = formData;
+    const { name, email, phone, carModel, message } = formData;
     if (!name || !message) {
       toast({
         variant: "destructive",
@@ -66,6 +71,12 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     let prefilledMessage = `Hello, my name is ${name}.`;
     if (email) {
       prefilledMessage += ` My email is ${email}.`;
+    }
+    if(phone) {
+        prefilledMessage += ` My phone number is ${phone}.`;
+    }
+    if(carModel) {
+        prefilledMessage += ` My car model is ${carModel}.`;
     }
     if (selectedPlan) {
       prefilledMessage += `\nI'm interested in the '${selectedPlan}' plan.`;
@@ -114,6 +125,29 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
                       <Input id="email" type="email" placeholder="Enter your email" required value={formData.email} onChange={handleInputChange} />
+                    </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone Number</Label>
+                      <Input id="phone" placeholder="Enter your phone number" value={formData.phone} onChange={handleInputChange} />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="carModel">Car Model</Label>
+                        <Select onValueChange={handleCarModelChange} value={formData.carModel}>
+                            <SelectTrigger>
+                                <SelectValue placeholder="Select car model" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="Sedan">Sedan</SelectItem>
+                                <SelectItem value="SUV">SUV</SelectItem>
+                                <SelectItem value="Hatchback">Hatchback</SelectItem>
+                                <SelectItem value="Coupe">Coupe</SelectItem>
+                                <SelectItem value="Convertible">Convertible</SelectItem>
+                                <SelectItem value="Minivan">Minivan</SelectItem>
+                                <SelectItem value="Other">Other</SelectItem>
+                            </SelectContent>
+                        </Select>
                     </div>
                 </div>
                 <div className="space-y-2">
