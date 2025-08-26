@@ -10,6 +10,8 @@ import { Loader2, Send, MessageCircle, Star } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
+const plans = ['Quick Sparkle', 'Super Shine', 'Ultimate Glow'];
+
 export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPlan: string | null; setSelectedPlan: (plan: string | null) => void; }) {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -21,12 +23,21 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
         ...prev,
         message: `I'm interested in the '${selectedPlan}' plan.`,
       }));
+    } else {
+        setFormData((prev) => ({
+            ...prev,
+            message: ``,
+        }));
     }
   }, [selectedPlan]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+  
+  const handlePlanChange = (value: string) => {
+    setSelectedPlan(value);
   };
 
   const handleCarModelChange = (value: string) => {
@@ -108,15 +119,24 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
             </CardHeader>
             <CardContent>
               <form className="space-y-4" onSubmit={handleFormSubmit}>
-                {selectedPlan && (
-                  <div className="space-y-2">
-                    <Label htmlFor="plan">Selected Plan</Label>
-                    <div className="flex h-10 w-full items-center rounded-md border border-input bg-muted px-3 py-2 text-sm">
-                      <Star className="mr-2 h-4 w-4 text-icon-primary" />
-                      {selectedPlan}
-                    </div>
-                  </div>
-                )}
+                <div className="space-y-2">
+                  <Label htmlFor="plan">Selected Plan</Label>
+                  <Select onValueChange={handlePlanChange} value={selectedPlan || ''}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a plan" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {plans.map((plan) => (
+                        <SelectItem key={plan} value={plan}>
+                          <div className="flex items-center">
+                            <Star className="mr-2 h-4 w-4 text-icon-primary" />
+                            {plan}
+                          </div>
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name</Label>
