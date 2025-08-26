@@ -1,4 +1,3 @@
-
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
@@ -47,7 +46,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-body antialiased bg-white text-gray-900 relative">
+      <body className="font-body antialiased bg-background text-text-primary relative">
         <SplashScreenProvider>{children}</SplashScreenProvider>
         <Toaster />
         <PromotionalBanner />

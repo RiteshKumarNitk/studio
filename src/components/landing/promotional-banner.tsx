@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect } from 'react';
@@ -9,17 +8,17 @@ import { Button } from '@/components/ui/button';
 
 const promotions = [
   {
-    icon: <TicketPercent className="h-8 w-8 text-primary" />,
+    icon: <TicketPercent className="h-8 w-8 text-icon-primary" />,
     title: "Your First Wash Is Free",
     description: "Get ₹200 OFF on your first booking with us. Experience the Bubble Drive difference!",
   },
   {
-    icon: <Users className="h-8 w-8 text-primary" />,
+    icon: <Users className="h-8 w-8 text-icon-primary" />,
     title: "Refer a Friend",
     description: "Share the love! You and your friend both get ₹250 OFF when they book their first wash.",
   },
   {
-    icon: <Gift className="h-8 w-8 text-primary" />,
+    icon: <Gift className="h-8 w-8 text-icon-primary" />,
     title: "Loyalty Program",
     description: "Join our loyalty program and get every 6th wash for free. We love our regulars!",
   }

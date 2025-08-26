@@ -7,7 +7,7 @@ export default function Location() {
   return (
     <motion.section
       id="location"
-      className="w-full bg-white py-16 sm:py-20 md:py-24"
+      className="w-full bg-card py-16 sm:py-20 md:py-24"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -16,7 +16,7 @@ export default function Location() {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Heading */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-text-primary sm:text-4xl md:text-5xl">
             Find Us Here
           </h2>
           <p className="mt-4 text-muted-foreground md:text-lg">
@@ -44,7 +44,7 @@ export default function Location() {
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />
+                  <MapPin className="h-6 w-6 text-icon-primary" />
                 </div>
               </div>
               <div>

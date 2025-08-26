@@ -59,11 +59,11 @@ export default function Contact() {
   return (
     <section id="contact" className="w-full relative overflow-hidden py-16 sm:py-20 md:py-24">
         <div className="absolute top-0 left-0 -z-10 h-full w-full bg-white [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"></div>
-        <div className="absolute bottom-0 right-0 -z-10 h-full w-full bg-blue-50 [mask-image:radial-gradient(100%_100%_at_bottom_left,white,transparent)]"></div>
+        <div className="absolute bottom-0 right-0 -z-10 h-full w-full bg-secondary [mask-image:radial-gradient(100%_100%_at_bottom_left,white,transparent)]"></div>
 
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-xl space-y-4 text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact Us</h2>
+          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">Contact Us</h2>
           <p className="text-muted-foreground md:text-xl">
             Have questions? We'd love to hear from you.
           </p>
@@ -101,7 +101,7 @@ export default function Contact() {
                       </>
                     )}
                   </Button>
-                  <Button type="button" size="lg" className="w-full font-bold bg-green-500 hover:bg-green-600 text-white" onClick={handleWhatsAppSend}>
+                  <Button type="button" size="lg" className="w-full font-bold bg-[#25D366] hover:bg-[#1EBE57] text-white" onClick={handleWhatsAppSend}>
                     <MessageCircle className="mr-2" />
                     Send via WhatsApp
                   </Button>

@@ -6,22 +6,22 @@ import { motion } from 'framer-motion';
 
 const features = [
   {
-    icon: <CalendarClock className="h-10 w-10 text-primary" />,
+    icon: <CalendarClock className="h-10 w-10 text-icon-primary" />,
     title: 'Book Your Service',
     description: 'Pick a time that works for you, and we’ll be there. No waiting, no hassle.',
   },
   {
-    icon: <ShieldCheck className="h-10 w-10 text-primary" />,
+    icon: <ShieldCheck className="h-10 w-10 text-icon-primary" />,
     title: 'Expert Car Care',
     description: 'Our car care experts are skilled, trustworthy, and dedicated to making your car shine.',
   },
   {
-    icon: <Leaf className="h-10 w-10 text-primary" />,
+    icon: <Leaf className="h-10 w-10 text-icon-primary" />,
     title: 'Eco-Friendly Washing',
     description: 'We use water-saving techniques and biodegradable products to protect our planet.',
   },
    {
-    icon: <Car className="h-10 w-10 text-primary" />,
+    icon: <Car className="h-10 w-10 text-icon-primary" />,
     title: 'Enjoy Your Ride',
     description: 'Drive away in a car that looks, smells, and feels brand new. Pure satisfaction.',
   },
@@ -59,7 +59,7 @@ export default function HowItWorks() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">
             How We Make Magic Happen
           </h2>
           <p className="mt-4 text-muted-foreground md:text-xl">

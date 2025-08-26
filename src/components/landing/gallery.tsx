@@ -48,7 +48,7 @@ const images = [
 
 export default function Gallery() {
   const plugin = useRef(
-    Autoplay({ delay: 3500, stopOnInteraction: false }) // ✅ auto-slide every 3.5s
+    Autoplay({ delay: 3500, stopOnInteraction: false })
   );
 
   return (
@@ -63,7 +63,7 @@ export default function Gallery() {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Heading */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-text-primary sm:text-4xl md:text-5xl">
             Our Sparkling Results
           </h2>
           <p className="mt-4 text-muted-foreground md:text-lg">
@@ -97,8 +97,8 @@ export default function Gallery() {
             </CarouselContent>
 
             {/* Arrows */}
-            <CarouselPrevious className="absolute -left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 shadow-md hover:bg-white p-2" />
-            <CarouselNext className="absolute -right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 shadow-md hover:bg-white p-2" />
+            <CarouselPrevious className="absolute -left-2 top-1/2 -translate-y-1/2 rounded-full bg-card/90 shadow-md hover:bg-card p-2" />
+            <CarouselNext className="absolute -right-2 top-1/2 -translate-y-1/2 rounded-full bg-card/90 shadow-md hover:bg-card p-2" />
           </Carousel>
         </div>
       </div>
@@ -117,7 +117,7 @@ function ImageWithLoader({
   return (
     <div className="relative aspect-[4/3] w-full">
       {isLoading && (
-        <div className="absolute inset-0 animate-pulse bg-gray-200 rounded-2xl" />
+        <div className="absolute inset-0 animate-pulse bg-muted rounded-2xl" />
       )}
       <Image
         src={image.src}

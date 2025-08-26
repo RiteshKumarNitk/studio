@@ -66,7 +66,7 @@ export default function Pricing() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Choose Your Plan</h2>
+          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">Choose Your Plan</h2>
           <p className="mt-4 text-muted-foreground md:text-xl">
             Simple, transparent pricing. No hidden fees. Ever.
           </p>

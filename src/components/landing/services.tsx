@@ -14,42 +14,42 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
   {
-    icon: <Sparkles className="h-10 w-10 text-primary" />,
+    icon: <Sparkles className="h-10 w-10 text-icon-primary" />,
     name: "Deep Cleaning",
     desc: "Thorough inside-out cleaning for a fresh look.",
   },
   {
-    icon: <WandSparkles className="h-10 w-10 text-primary" />,
+    icon: <WandSparkles className="h-10 w-10 text-icon-primary" />,
     name: "Polishing",
     desc: "Restores shine and removes fine scratches.",
   },
   {
-    icon: <Droplets className="h-10 w-10 text-primary" />,
+    icon: <Droplets className="h-10 w-10 text-icon-primary" />,
     name: "Waterless Wash",
     desc: "Eco-friendly cleaning with minimal water usage.",
   },
   {
-    icon: <Wind className="h-10 w-10 text-primary" />,
+    icon: <Wind className="h-10 w-10 text-icon-primary" />,
     name: "Interior Vacuuming",
     desc: "Removes dust and debris from seats & carpets.",
   },
   {
-    icon: <Sparkles className="h-10 w-10 text-primary" />,
+    icon: <Sparkles className="h-10 w-10 text-icon-primary" />,
     name: "Tire Polish",
     desc: "Keeps your tires looking shiny and brand new.",
   },
   {
-    icon: <Gauge className="h-10 w-10 text-primary" />,
+    icon: <Gauge className="h-10 w-10 text-icon-primary" />,
     name: "Dashboard Polish",
     desc: "Protects & restores dashboard shine.",
   },
   {
-    icon: <Car className="h-10 w-10 text-primary" />,
+    icon: <Car className="h-10 w-10 text-icon-primary" />,
     name: "Ceramic Coating",
     desc: "Premium nano-protection for your car’s paint.",
   },
   {
-    icon: <SprayCan className="h-10 w-10 text-primary" />,
+    icon: <SprayCan className="h-10 w-10 text-icon-primary" />,
     name: "Odor Removal",
     desc: "Removes stubborn odors and refreshes air.",
   },
@@ -87,7 +87,7 @@ export default function Services() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">
             Our Premium Services
           </h2>
           <p className="mt-4 text-muted-foreground md:text-xl">
