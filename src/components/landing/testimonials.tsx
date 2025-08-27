@@ -60,14 +60,14 @@ const testimonials = [
 
 export default function Testimonials() {
   const plugin = useRef(
-    Autoplay({ delay: 3500, stopOnInteraction: false }) // ✅ autoplay every 3.5s
+    Autoplay({ delay: 3500, stopOnInteraction: false })
   );
 
   return (
     <section id="testimonials" className="w-full">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">
             What Our Customers Are Saying
           </h2>
           <p className="mt-4 text-muted-foreground md:text-xl">
@@ -75,7 +75,6 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* ✅ Carousel with autoplay + fixed card sizes */}
         <div className="mt-12 relative max-w-6xl mx-auto">
           <Carousel
             plugins={[plugin.current]}
@@ -124,7 +123,6 @@ export default function Testimonials() {
               ))}
             </CarouselContent>
 
-            {/* ✅ Arrows inside container */}
             <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 z-10" />
             <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 z-10" />
           </Carousel>

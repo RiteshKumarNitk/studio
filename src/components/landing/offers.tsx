@@ -5,17 +5,17 @@ import { TicketPercent, Users, Gift } from 'lucide-react';
 
 const offers = [
     {
-        icon: <TicketPercent className="h-8 w-8 text-primary" />,
+        icon: <TicketPercent className="h-8 w-8 text-icon-primary" />,
         title: "Your First Wash Is Free",
         description: "Get ₹200 OFF on your first booking with us. Experience the Bubble Drive difference!",
     },
     {
-        icon: <Users className="h-8 w-8 text-primary" />,
+        icon: <Users className="h-8 w-8 text-icon-primary" />,
         title: "Refer a Friend",
         description: "Share the love! You and your friend both get ₹250 OFF when they book their first wash.",
     },
     {
-        icon: <Gift className="h-8 w-8 text-primary" />,
+        icon: <Gift className="h-8 w-8 text-icon-primary" />,
         title: "Loyalty Program",
         description: "Join our loyalty program and get every 6th wash for free. We love our regulars!",
     }
@@ -26,7 +26,7 @@ export default function Offers() {
     <section id="offers" className="w-full bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">
             Shiny Deals, Shiny Cars. Shiny You!
           </h2>
           <p className="mt-4 text-muted-foreground md:text-xl">

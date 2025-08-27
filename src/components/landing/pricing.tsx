@@ -32,7 +32,7 @@ const plans = [
   },
 ];
 
-export default function Pricing() {
+export default function Pricing({ onPlanSelect }: { onPlanSelect: (planName: string) => void }) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -66,7 +66,7 @@ export default function Pricing() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Choose Your Plan</h2>
+          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">Choose Your Plan</h2>
           <p className="mt-4 text-muted-foreground md:text-xl">
             Simple, transparent pricing. No hidden fees. Ever.
           </p>
@@ -92,7 +92,7 @@ export default function Pricing() {
                 <CardHeader className="p-6">
                   <CardTitle className="font-headline text-2xl font-bold">{plan.name}</CardTitle>
                   <CardDescription>
-                    <span className="text-4xl font-bold text-foreground">{plan.price}</span> / {plan.duration}
+                    <span className="text-4xl font-bold text-foreground">₹{plan.price}</span> / {plan.duration}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1 p-6 space-y-4">
@@ -106,8 +106,13 @@ export default function Pricing() {
                   </ul>
                 </CardContent>
                 <CardFooter className="p-6 mt-auto">
-                  <Button asChild size="lg" className="w-full font-bold" variant={plan.popular ? 'default' : 'outline'}>
-                    <Link href="#contact">Pick Your Plan</Link>
+                  <Button
+                    size="lg"
+                    className="w-full font-bold"
+                    variant={plan.popular ? 'default' : 'outline'}
+                    onClick={() => onPlanSelect(plan.name)}
+                  >
+                    Pick Your Plan
                   </Button>
                 </CardFooter>
               </Card>

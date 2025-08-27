@@ -10,111 +10,115 @@ import {
   SprayCan,
   Gauge,
 } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-// ✅ Updated services list with descriptions
 const services = [
   {
-    icon: <Sparkles className="h-10 w-10" />,
+    icon: <Sparkles className="h-10 w-10 text-icon-primary" />,
     name: "Deep Cleaning",
     desc: "Thorough inside-out cleaning for a fresh look.",
   },
   {
-    icon: <WandSparkles className="h-10 w-10" />,
+    icon: <WandSparkles className="h-10 w-10 text-icon-primary" />,
     name: "Polishing",
     desc: "Restores shine and removes fine scratches.",
   },
   {
-    icon: <Droplets className="h-10 w-10" />,
+    icon: <Droplets className="h-10 w-10 text-icon-primary" />,
     name: "Waterless Wash",
     desc: "Eco-friendly cleaning with minimal water usage.",
   },
   {
-    icon: <Wind className="h-10 w-10" />,
+    icon: <Wind className="h-10 w-10 text-icon-primary" />,
     name: "Interior Vacuuming",
     desc: "Removes dust and debris from seats & carpets.",
   },
   {
-    icon: <Sparkles className="h-10 w-10" />,
+    icon: <Sparkles className="h-10 w-10 text-icon-primary" />,
     name: "Tire Polish",
     desc: "Keeps your tires looking shiny and brand new.",
   },
   {
-    icon: <Gauge className="h-10 w-10" />,
+    icon: <Gauge className="h-10 w-10 text-icon-primary" />,
     name: "Dashboard Polish",
     desc: "Protects & restores dashboard shine.",
   },
-  // {
-  //   icon: <Sparkles className="h-10 w-10" />,
-  //   name: "Exterior Waxing",
-  //   desc: "Gives long-lasting paint protection & gloss.",
-  // },
-  // {
-  //   icon: <WandSparkles className="h-10 w-10" />,
-  //   name: "Headlight Restoration",
-  //   desc: "Improves brightness by removing fog & yellowing.",
-  // },
-  // {
-  //   icon: <Car className="h-10 w-10" />,
-  //   name: "Ceramic Coating",
-  //   desc: "Premium nano-protection for your car’s paint.",
-  // },
-  // {
-  //   icon: <SprayCan className="h-10 w-10" />,
-  //   name: "Odor Removal",
-  //   desc: "Removes stubborn odors and refreshes air.",
-  // },
-  // {
-  //   icon: <Sparkles className="h-10 w-10" />,
-  //   name: "Engine Bay Cleaning",
-  //   desc: "Safe engine cleaning for better performance.",
-  // },
-  // {
-  //   icon: <WandSparkles className="h-10 w-10" />,
-  //   name: "Glass Polishing",
-  //   desc: "Crystal-clear finish for all glass surfaces.",
-  // },
+  {
+    icon: <Car className="h-10 w-10 text-icon-primary" />,
+    name: "Ceramic Coating",
+    desc: "Premium nano-protection for your car’s paint.",
+  },
+  {
+    icon: <SprayCan className="h-10 w-10 text-icon-primary" />,
+    name: "Odor Removal",
+    desc: "Removes stubborn odors and refreshes air.",
+  },
 ];
 
-export default function ServicesGrid() {
+export default function Services() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <section className="relative w-full py-16 bg-gradient-to-b from-gray-50 to-white">
-      <div className="mx-auto max-w-6xl px-4">
-        <motion.h2
+    <section id="services" className="w-full bg-secondary">
+      <div className="container mx-auto px-4 md:px-6">
+        <motion.div
+          className="mx-auto max-w-2xl text-center"
           initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center mb-12 text-gray-800"
         >
-          Our Premium Services
-        </motion.h2>
-
-        {/* ✅ Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05, rotate: 1 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.08 }}
-              className="flex flex-col items-center text-center rounded-2xl bg-white shadow-md p-8 cursor-pointer hover:shadow-xl hover:bg-blue-50 group"
-            >
-              {/* Icon */}
-              <div className="text-blue-600 mb-4 group-hover:animate-bounce">
-                {service.icon}
-              </div>
-
-              {/* Title */}
-              <h3 className="text-lg font-semibold mb-2 text-gray-700 group-hover:text-blue-600">
-                {service.name}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm text-gray-500">{service.desc}</p>
+          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">
+            Our Premium Services
+          </h2>
+          <p className="mt-4 text-muted-foreground md:text-xl">
+            We offer a wide range of services to get your car looking its best.
+          </p>
+        </motion.div>
+        <motion.div
+          className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {services.map((service, index) => (
+            <motion.div key={index} variants={itemVariants}>
+              <Card className="flex h-full flex-col items-center text-center p-6 rounded-2xl shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <CardHeader className="p-0 items-center">
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                    {service.icon}
+                  </div>
+                  <CardTitle className="font-headline text-xl font-semibold">
+                    {service.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-0 mt-2">
+                  <p className="text-muted-foreground">{service.desc}</p>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

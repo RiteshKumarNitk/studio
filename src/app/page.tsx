@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import Header from '@/components/landing/header';
 import Hero from '@/components/landing/hero';
 import HowItWorks from '@/components/landing/how-it-works';
@@ -13,8 +13,21 @@ import Contact from '@/components/landing/contact';
 import Footer from '@/components/landing/footer';
 import HomePageSkeleton from '@/components/landing/home-page-skeleton';
 import Gallery from '@/components/landing/gallery';
+import Location from '@/components/landing/location';
 
 function HomeComponent() {
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+
+  const handlePlanSelect = (planName: string) => {
+    setSelectedPlan(planName);
+    // Scroll to contact section
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
@@ -22,12 +35,13 @@ function HomeComponent() {
         <Hero />
         <About />
         <HowItWorks />
-        <Pricing />
+        <Pricing onPlanSelect={handlePlanSelect} />
         <Offers />
         <Services />
         <Gallery />
         <Testimonials />
-        <Contact />
+        <Location />
+        <Contact selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />
       </main>
       <Footer />
     </div>

@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, Sparkles } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '#about', label: 'About Us' },
@@ -30,12 +31,11 @@ export default function Header() {
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "bg-background/80 backdrop-blur-sm border-b" : "bg-transparent"
+      isScrolled ? "bg-header-background/80 backdrop-blur-sm border-b" : "bg-transparent"
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="#home" className="flex items-center gap-2" prefetch={false}>
-          <Sparkles className="h-7 w-7 text-primary" />
-          <span className="font-headline text-2xl font-bold text-foreground">Bubble Drive</span>
+          <Image src="/logo.png" alt="Bubble Drive Logo" width={150} height={40} />
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
@@ -50,9 +50,6 @@ export default function Header() {
           ))}
         </nav>
         <div className="hidden items-center gap-4 md:flex">
-          <Button asChild size="lg">
-            <Link href="#plans">Book Your Wash Now</Link>
-          </Button>
         </div>
         <Sheet>
           <SheetTrigger asChild>
@@ -62,10 +59,10 @@ export default function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
+            <SheetTitle className="sr-only">Menu</SheetTitle>
             <div className="grid gap-6 p-6">
               <Link href="#home" className="flex items-center gap-2" prefetch={false}>
-                <Sparkles className="h-6 w-6 text-primary" />
-                <span className="font-headline text-xl font-bold">Bubble Drive</span>
+                 <Image src="/logo.png" alt="Bubble Drive Logo" width={150} height={40} />
               </Link>
               <nav className="grid gap-4">
                 {navLinks.map((link) => (

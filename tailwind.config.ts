@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -17,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['PT Sans', 'sans-serif'],
-        headline: ['Poppins', 'sans-serif'],
+        body: ['Lexend', 'sans-serif'],
+        headline: ['Lexend', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -72,6 +73,8 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
+        'icon-primary': 'hsl(var(--icon-primary))',
+        'icon-secondary': 'hsl(var(--icon-secondary))',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -107,12 +110,23 @@ export default {
               transform: 'scale(1.2) translate(-10%, 10%)',
             },
           },
+        'bubble-float': {
+          '0%': {
+            transform: 'translateY(0) scale(1)',
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'translateY(-100vh) scale(1.2)',
+            opacity: '0',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'pulse-slow': 'pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'pulse-slower': 'pulse-slower 10s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bubble-float': 'bubble-float 10s linear infinite',
       },
     },
   },
