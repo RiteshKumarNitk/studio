@@ -6,13 +6,9 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Loader2, Send, MessageCircle, Star, CalendarIcon } from 'lucide-react';
+import { Loader2, MessageCircle, Star } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Calendar } from '@/components/ui/calendar';
-import { cn } from '@/lib/utils';
-import { format } from 'date-fns';
 
 const plans = ['Quick Sparkle', 'Super Shine', 'Ultimate Glow'];
 
@@ -20,9 +16,6 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const [formData, setFormData] = useState({ name: '', phone: '', carModel: '', message: '' });
-  const [date, setDate] = useState<Date | undefined>(undefined);
-  const [isCalendarOpen, setCalendarOpen] = useState(false);
-
 
   useEffect(() => {
     if (selectedPlan) {
@@ -51,37 +44,10 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     setFormData((prev) => ({...prev, carModel: value}));
   }
 
-  const handleDateSelect = (selectedDate?: Date) => {
-    setDate(selectedDate);
-    if (selectedDate) {
-      setCalendarOpen(false); // Close calendar on date selection
-    }
-  };
-
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsLoading(false);
-    
-    // Reset form fields
-    setFormData({ name: '', phone: '', carModel: '', message: '' });
-    setDate(undefined);
-    if (selectedPlan) {
-      setSelectedPlan(null);
-    }
-
-
-    toast({
-      title: 'Message Sent!',
-      description: 'Thanks for reaching out. We will get back to you shortly.',
-    });
-  };
-
-  const handleWhatsAppSend = () => {
     const { name, phone, carModel, message } = formData;
     if (!name || !message) {
       toast({
@@ -89,6 +55,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
         title: 'Fields Missing',
         description: 'Please enter your name and a message to send via WhatsApp.',
       });
+      setIsLoading(false);
       return;
     }
     
@@ -104,14 +71,19 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     if (selectedPlan) {
       prefilledMessage += `\nI'm interested in the '${selectedPlan}' plan.`;
     }
-    if (date) {
-      prefilledMessage += `\nI'd like to schedule for: ${format(date, "PPP")}.`;
-    }
     prefilledMessage += `\n\nMessage: ${message}`;
 
     const whatsappUrl = `https://wa.me/${yourPhoneNumber}?text=${encodeURIComponent(prefilledMessage)}`;
     
     window.open(whatsappUrl, '_blank');
+    
+    setIsLoading(false);
+    
+    // Reset form fields
+    setFormData({ name: '', phone: '', carModel: '', message: '' });
+    if (selectedPlan) {
+      setSelectedPlan(null);
+    }
   };
 
   return (
@@ -130,7 +102,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
           <Card className="shadow-lg rounded-2xl">
             <CardHeader>
               <CardTitle>Send us a Message</CardTitle>
-              <CardDescription>Fill out the form below and we'll get back to you.</CardDescription>
+              <CardDescription>Fill out the form below and we'll get back to you via WhatsApp.</CardDescription>
             </CardHeader>
             <CardContent>
               <form className="space-y-4" onSubmit={handleFormSubmit}>
@@ -179,49 +151,20 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
                         </Select>
                     </div>
                 </div>
-                 <div className="space-y-2">
-                  <Label htmlFor="date">Schedule Wash</Label>
-                  <Popover open={isCalendarOpen} onOpenChange={setCalendarOpen}>
-                    <PopoverTrigger asChild>
-                      <Button
-                        variant={"outline"}
-                        className={cn(
-                          "w-full justify-start text-left font-normal",
-                          !date && "text-muted-foreground"
-                        )}
-                      >
-                        <CalendarIcon className="mr-2 h-4 w-4" />
-                        {date ? format(date, "PPP") : <span>Pick a date</span>}
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0">
-                      <Calendar
-                        mode="single"
-                        selected={date}
-                        onSelect={handleDateSelect}
-                        initialFocus
-                      />
-                    </PopoverContent>
-                  </Popover>
-                </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea id="message" placeholder="Your message" required className="min-h-[120px]" value={formData.message} onChange={handleInputChange} />
                 </div>
                 <div className="flex flex-col sm:flex-row gap-2">
-                  <Button type="submit" size="lg" className="w-full font-bold" disabled={isLoading}>
+                  <Button type="submit" size="lg" className="w-full font-bold bg-[#25D366] hover:bg-[#1EBE57] text-white" disabled={isLoading}>
                     {isLoading ? (
                       <Loader2 className="animate-spin" />
                     ) : (
                       <>
-                        <Send className="mr-2" />
-                        Send Message
+                        <MessageCircle className="mr-2" />
+                        Send via WhatsApp
                       </>
                     )}
-                  </Button>
-                  <Button type="button" size="lg" className="w-full font-bold bg-[#25D366] hover:bg-[#1EBE57] text-white" onClick={handleWhatsAppSend}>
-                    <MessageCircle className="mr-2" />
-                    Send via WhatsApp
                   </Button>
                 </div>
               </form>
