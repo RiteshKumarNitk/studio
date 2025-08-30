@@ -64,7 +64,7 @@ export default function Testimonials() {
   );
 
   return (
-    <section id="testimonials" className="w-full bg-card">
+    <section id="testimonials" className="w-full bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">
