@@ -30,13 +30,6 @@ export default function PromotionalDialog({ show, onHide }: {show: boolean, onHi
               <p className="text-sm text-muted-foreground">Yep, you read that right! Get ₹200 OFF your first wash.</p>
             </div>
           </div>
-          <div className="flex items-center gap-4 p-4 bg-white/50 rounded-lg border border-primary/20">
-            <Users className="h-8 w-8 text-icon-primary" />
-            <div>
-              <h3 className="font-semibold text-text-primary">Refer a Friend</h3>
-              <p className="text-sm text-muted-foreground">Get ₹250 OFF, and so do they. Shine is contagious.</p>
-            </div>
-          </div>
         </div>
         <Button asChild size="lg" className="w-full font-bold" onClick={onHide}>
           <Link href="#plans">Get Your Shiny Deal</Link>

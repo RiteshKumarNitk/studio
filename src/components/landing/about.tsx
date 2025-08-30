@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { Card, CardContent } from '@/components/ui/card';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 export default function About() {
   const variants = {
@@ -21,7 +21,7 @@ export default function About() {
       viewport={{ once: true, amount: 0.3 }}
       variants={variants}
     >
-        {/* Bubbles Background */}
+      {/* Bubbles Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {bubbles.map((_, i) => {
           const size = Math.random() * 80 + 30;
@@ -36,12 +36,12 @@ export default function About() {
                 opacity: Math.random() * 0.4 + 0.1,
               }}
               animate={{
-                bottom: '100%',
+                bottom: "100%",
                 transition: {
                   duration: Math.random() * 15 + 10,
                   repeat: Infinity,
-                  repeatType: 'loop',
-                  ease: 'linear',
+                  repeatType: "loop",
+                  ease: "linear",
                   delay: Math.random() * 8,
                 },
               }}
@@ -66,7 +66,25 @@ export default function About() {
             Who We Are
           </h2>
           <p className="text-muted-foreground text-base/relaxed lg:text-lg/relaxed">
-            We're not just car washers; we're car lovers. Bubble Drive started with a simple idea: what if getting your car washed was as easy as ordering a pizza? We noticed our friends and family struggling to find time for car care, driving around with dusty bonnets and smudged windows. So, we created a service that brings the sparkle to your doorstep. We use eco-friendly products because we love our planet as much as we love clean cars. Our team is a bunch of friendly, trained professionals who believe a clean car equals a happy driver. Our mission is to provide a convenient, high-quality, and environmentally responsible car wash service that leaves you with a smile and a car that looks and feels brand new.
+            “Meet us: Bubble Drive – a team of car lovers who can't bear to see
+            your car covered in dust. We get it – it’s like your car’s wearing a
+            dirty coat all the time. We’re Monica from Friends—we’re the ones
+            who clean everything (yes, even the unspeakable spots). If your
+            car’s looking dull, we want to bring the shine back,
+          </p>
+          <p className="text-muted-foreground text-base/relaxed lg:text-lg/relaxed">
+            When we first started, we realized there were too many dusty cars
+            and too many frustrated drivers wasting precious weekends at the
+            service stations. That’s when we said, Enough! Let’s make a car wash
+            service that’s quick, easy, and leaves your car looking like it just
+            had a spa day (minus the cucumber slices).
+          </p>
+          <p className="text-muted-foreground text-base/relaxed lg:text-lg/relaxed">
+            We’re not here to offer just a clean. We're here to make sure your
+            car feels as fresh as the first time you took it out for a ride.
+            Whether it’s a quick wash or a full VIP treatment, we’ve got your
+            car’s back—literally. We come, we clean, and we leave a happy
+            car in our wake.”
           </p>
         </motion.div>
         <motion.div

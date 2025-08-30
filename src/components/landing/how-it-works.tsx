@@ -75,8 +75,8 @@ export default function HowItWorks() {
         >
           {features.map((feature, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="flex h-full flex-col items-center text-center p-6 rounded-2xl shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                <CardHeader className="p-0">
+              <Card className="flex border-none  justify-center bg-transparent bg-none h-full flex-col items-center text-center p-6">
+                <CardHeader className="p-0 justify-center items-center">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                     {feature.icon}
                   </div>

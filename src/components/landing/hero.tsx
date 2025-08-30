@@ -21,7 +21,7 @@ export default function Hero() {
       
       <div className="container z-10 px-4 md:px-6 text-center">
         <div className="mx-auto max-w-3xl space-y-6">
-          <h1 className="font-headline text-4xl font-extrabold tracking-tighter text-white sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="font-headline text-3xl font-extrabold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl">
             Daily Dust, Leave It to Us
           </h1>
           <p className="text-lg text-gray-200 md:text-xl">
