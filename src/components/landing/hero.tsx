@@ -28,10 +28,12 @@ export default function Hero() {
             Your car deserves better than dust. We’ll take care of it.
           </p>
           <div className="flex flex-col items-center gap-4">
-            <Button
+          <Button
               asChild
               size="lg"
-              className="w-full rounded-full px-8 py-6 text-lg font-bold sm:w-auto"
+              className="w-full rounded-full px-8 py-6 text-lg font-bold text-white 
+                        bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 
+                        shadow-lg sm:w-auto"
             >
               <Link href="#plans">Book Your Wash Now</Link>
             </Button>

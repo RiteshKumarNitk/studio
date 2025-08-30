@@ -96,7 +96,7 @@ export default function Testimonials() {
                   >
                     <Card className="h-full rounded-2xl shadow-lg flex">
                       <CardContent className="flex h-full flex-col justify-between gap-6 p-6">
-                        <blockquote className="text-lg font-medium leading-relaxed">
+                        <blockquote className="text-md text-muted-foreground leading-relaxed">
                           "{testimonial.quote}"
                         </blockquote>
                         <div className="flex items-center gap-4">
