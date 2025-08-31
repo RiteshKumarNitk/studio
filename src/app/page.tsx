@@ -36,11 +36,11 @@ function HomeComponent() {
         <About />
         <HowItWorks />
         <Pricing onPlanSelect={handlePlanSelect} />
-        <Offers />
+        {/* <Offers /> */}
         <Services />
         <Gallery />
         <Testimonials />
-        <Location />
+        {/* <Location /> */}
         <Contact selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />
       </main>
       <Footer />
