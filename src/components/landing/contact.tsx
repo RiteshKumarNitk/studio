@@ -10,7 +10,7 @@ import { Loader2, MessageCircle, Star } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
-const plans = ['Quick Sparkle', 'Super Shine', 'Ultimate Glow'];
+const plans = ['Starter Shine', 'Classic Clean', 'Elite Detailing'];
 
 export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPlan: string | null; setSelectedPlan: (plan: string | null) => void; }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -59,7 +59,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
       return;
     }
     
-    const yourPhoneNumber = '918946887702'; 
+    const yourPhoneNumber = '919664407388'; 
     
     let prefilledMessage = `Hello, my name is ${name}.`;
     if(phone) {
