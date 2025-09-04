@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -21,14 +21,14 @@ export default function About() {
       viewport={{ once: true, amount: 0.3 }}
       variants={variants}
     >
-      {/* Bubbles Background */}
+      {/* Floating bubbles background */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {bubbles.map((_, i) => {
           const size = Math.random() * 80 + 30;
           return (
             <motion.div
               key={i}
-              className="absolute bg-primary/20 rounded-full"
+              className="absolute bg-primary/60 rounded-full"
               initial={{
                 bottom: -50,
                 left: `${Math.random() * 100}%`,
@@ -45,30 +45,14 @@ export default function About() {
                   delay: Math.random() * 8,
                 },
               }}
-              style={{
-                width: `${size}px`,
-                height: `${size}px`,
-              }}
+              style={{ width: `${size}px`, height: `${size}px` }}
             />
           );
         })}
       </div>
 
-      <div className="container mx-auto px-8 md:px-12 lg:px-24  relative z-10 space-y-16">
-        {/* Intro Heading */}
-        <motion.div
-          className="text-center max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">
-            Who We Are
-          </h2>
-        </motion.div>
-
-        {/* Paragraph 1 with image RIGHT */}
+      <div className="container mx-auto px-8 md:px-12 lg:px-24 relative z-10 space-y-20">
+        {/* Block 1: Who We Are */}
         <motion.div
           className="grid md:grid-cols-2 items-center gap-10"
           initial={{ opacity: 0, x: -50 }}
@@ -76,27 +60,32 @@ export default function About() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-muted-foreground text-md/relaxed">
-            “Meet us: Bubble Drive – a team of car lovers who can't bear to see
-            your car covered in dust. We get it – it’s like your car’s wearing a
-            dirty coat all the time. We’re Monica from Friends—we’re the ones
-            who clean everything (yes, even the unspeakable spots). If your
-            car’s looking dull, we want to bring the shine back.
-          </p>
-          <Card className="overflow-hidden rounded-2xl shadow-xl">
+          <div className="space-y-4">
+            <h2 className="font-headline text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+              Who We Are
+            </h2>
+            <p className="text-muted-foreground text-md/relaxed">
+              At Bubble Drive, we’re a team of car lovers who take pride in
+              making vehicles look their absolute best. We know how frustrating
+              it can be to see your car lose its shine, which is why we’ve made
+              it our mission to bring that fresh, just-off-the-lot feeling back
+              to every ride.
+            </p>
+          </div>
+          <div className="overflow-hidden">
             <CardContent className="p-0">
               <Image
-                alt="Clean Car"
-                className="aspect-video w-full object-cover"
-                src="https://images.pexels.com/photos/6872601/pexels-photo-6872601.jpeg"
+                alt="Who We Are"
+                src="/testimonial/WhoWeAre.png"
                 width={600}
                 height={400}
+                className="w-full object-contain"
               />
             </CardContent>
-          </Card>
+          </div>
         </motion.div>
 
-        {/* Paragraph 2 with image LEFT */}
+        {/* Block 2: Why We Started */}
         <motion.div
           className="grid md:grid-cols-2 items-center gap-10"
           initial={{ opacity: 0, x: 50 }}
@@ -104,27 +93,32 @@ export default function About() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8 }}
         >
-          <Card className="overflow-hidden rounded-2xl shadow-xl order-last md:order-first">
+          <div className="overflow-hidden order-last md:order-first">
             <CardContent className="p-0">
               <Image
-                alt="Dusty Car"
-                className="aspect-video w-full object-cover"
-                src="https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg"
+                alt="Why We Started"
+                src="/testimonial/Why_We_Started.png"
                 width={600}
                 height={400}
+                className="w-full object-contain"
               />
             </CardContent>
-          </Card>
-          <p className="text-muted-foreground text-md/relaxed">
-            When we first started, we realized there were too many dusty cars
-            and too many frustrated drivers wasting precious weekends at the
-            service stations. That’s when we said, Enough! Let’s make a car wash
-            service that’s quick, easy, and leaves your car looking like it just
-            had a spa day (minus the cucumber slices).
-          </p>
+          </div>
+          <div className="space-y-4">
+            <h2 className="font-headline text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+              Why We Started
+            </h2>
+            <p className="text-muted-foreground text-md/relaxed">
+              The idea came to life when we noticed how much time and effort car
+              owners spent at traditional service stations, often for average
+              results. So, we decided to do things differently, offering a
+              quick, hassle-free service that delivers professional care with a
+              touch of personal attention.
+            </p>
+          </div>
         </motion.div>
 
-        {/* Paragraph 3 with image RIGHT */}
+        {/* Block 3: What We Promise */}
         <motion.div
           className="grid md:grid-cols-2 items-center gap-10"
           initial={{ opacity: 0, x: -50 }}
@@ -132,24 +126,28 @@ export default function About() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-muted-foreground text-md/relaxed">
-            We’re not here to offer just a clean. We're here to make sure your
-            car feels as fresh as the first time you took it out for a ride.
-            Whether it’s a quick wash or a full VIP treatment, we’ve got your
-            car’s back—literally. We come, we clean, and we leave a happy
-            car in our wake.
-          </p>
-          <Card className="overflow-hidden rounded-2xl shadow-xl">
+          <div className="space-y-4">
+            <h2 className="font-headline text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+              What We Promise
+            </h2>
+            <p className="text-muted-foreground text-md/relaxed">
+              Every car we work on is treated like our own. Whether it’s a
+              simple clean or a premium detailing session, we ensure precision,
+              quality, and a result that makes both you and your car feel
+              refreshed.
+            </p>
+          </div>
+          <div className="overflow-hidden">
             <CardContent className="p-0">
               <Image
-                alt="Car Shine"
-                className="aspect-video w-full object-cover"
-                src="https://images.pexels.com/photos/97075/pexels-photo-97075.jpeg"
+                alt="What We Promise"
+                src="/testimonial/whatwepromise.png"
                 width={600}
                 height={400}
+                className="w-full object-contain"
               />
             </CardContent>
-          </Card>
+          </div>
         </motion.div>
       </div>
     </motion.section>
