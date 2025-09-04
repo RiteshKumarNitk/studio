@@ -14,49 +14,56 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef } from 'react';
+import { UserRound } from "lucide-react";
 
 const testimonials = [
   {
-    name: 'Rajesh K.',
+    name: "Pulkit Bansal",
     quote:
-      'My car had more dust than my childhood toys! After Bubble Drive, it looks brand new. The team was professional and the result was just fantastic.',
-    avatar: 'https://placehold.co/100x100',
-    initials: 'RK',
-    handle: '@rajeshk',
+      "Had to rush to office and my car was super dusty. Booked Bubble Drive last minute and they came in 30 mins. Saved me big time. Not fancy words, just good work. Thanks guys!",
+    location: "Mansarovar",
+    avatar: "https://placehold.co/100x100",
+    initials: "PB",
+    handle: "@pulkitb",
   },
   {
-    name: 'Priya S.',
+    name: "Saksham Kamthan",
     quote:
-      "I didn’t know my car could look this good! The 'Super Shine' plan is worth every single penny. So convenient and the quality is top-notch.",
-    avatar: 'https://placehold.co/100x100',
-    initials: 'PS',
-    handle: '@priyas',
+      "Service is good. Price also okay for the work they do. They cleaned seats also, which I didn’t expect. Hope you guys keep it like this only, Jaipur needs such service.",
+    location: "Vaishali Nagar",
+    avatar: "https://placehold.co/100x100",
+    initials: "SK",
+    handle: "@sakshamk",
   },
   {
-    name: 'Amit V.',
+    name: "Mukul Rathore",
     quote:
-      'The eco-friendly aspect is what drew me in, and the service quality is what made me stay. My car has never been happier, and neither have I!',
-    avatar: 'https://placehold.co/100x100',
-    initials: 'AV',
-    handle: '@amitv',
+      "Honestly didn’t expect much but car looks like new. Even neighbours asked where I got it washed. 😄",
+    location: "Mahesh Nagar",
+    avatar: "https://placehold.co/100x100",
+    initials: "MR",
+    handle: "@mukulr",
   },
   {
-    name: 'Sunita M.',
+    name: "Sameer Gurjar",
     quote:
-      'As a busy professional, I barely have time for anything. Bubble Drive is a lifesaver. They come to my office and my car is sparkling when I leave.',
-    avatar: 'https://placehold.co/100x100',
-    initials: 'SM',
-    handle: '@sunitam',
+      "First time tried this home car wash thing. Team was polite and did a neat job. Only wish they bring their own water next time 😅 but overall happy.",
+    location: "C-Scheme",
+    avatar: "https://placehold.co/100x100",
+    initials: "SG",
+    handle: "@sameerg",
   },
   {
-    name: 'Vikram B.',
+    name: "Vikram Sharma",
     quote:
-      "Absolutely phenomenal service! They even got out the stubborn stains on my seats. The 'Ultimate Glow' is the real deal. Highly recommend!",
-    avatar: 'https://placehold.co/100x100',
-    initials: 'VB',
-    handle: '@vikramb',
+      "Good service, came on time and cleaned properly. Price is little high but okay because they come home. Car shine is good, let’s see if it stays same after few days.",
+    location: "Mahesh Nagar",
+    avatar: "https://placehold.co/100x100",
+    initials: "VS",
+    handle: "@vikrams",
   },
 ];
+
 
 export default function Testimonials() {
   const plugin = useRef(
@@ -100,15 +107,11 @@ export default function Testimonials() {
                           "{testimonial.quote}"
                         </blockquote>
                         <div className="flex items-center gap-4">
-                          <Avatar>
-                            <AvatarImage
-                              src={testimonial.avatar}
-                              alt={testimonial.name}
-                            />
-                            <AvatarFallback>
-                              {testimonial.initials}
-                            </AvatarFallback>
-                          </Avatar>
+                            <Avatar className="bg-muted">
+                              <AvatarFallback>
+                                <UserRound className="h-6 w-6 text-muted-foreground" />
+                              </AvatarFallback>
+                            </Avatar>
                           <div>
                             <p className="font-semibold">{testimonial.name}</p>
                             <p className="text-sm text-muted-foreground">

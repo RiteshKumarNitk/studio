@@ -1,6 +1,8 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
+import { Lexend } from "next/font/google";
+import ClientOnly from "@/components/client-only";
 import { Toaster } from "@/components/ui/toaster";
 import SplashScreenProvider from "@/components/splash-screen-provider";
 import Cursor from "@/components/ui/cursor";
@@ -32,28 +34,30 @@ export const metadata: Metadata = {
   },
 };
 
+// ✅ Load Google Font properly
+const lexend = Lexend({
+  subsets: ["latin"],
+  variable: "--font-lexend",
+  display: "swap",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        {/* Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="font-body antialiased bg-background text-text-primary relative">
-        <SplashScreenProvider>{children}</SplashScreenProvider>
-        <Toaster />
-        <PromotionalBanner />
-        {/* Custom motion cursor (hidden on touch devices) */}
-        <div className="hidden md:block">
-          <Cursor />
-        </div>
+      <body
+        className={`${lexend.variable} font-body antialiased bg-background text-text-primary relative`}
+      >
+        {/* ✅ Client-only components to avoid hydration mismatch */}
+        <ClientOnly>
+          <SplashScreenProvider>{children}</SplashScreenProvider>
+          <Toaster />
+          <PromotionalBanner />
+          <div className="hidden md:block">
+            <Cursor />
+          </div>
+        </ClientOnly>
       </body>
     </html>
   );

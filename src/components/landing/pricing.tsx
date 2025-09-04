@@ -11,25 +11,25 @@ import { motion } from 'framer-motion';
 const plans = [
   {
     name: 'Quick Sparkle',
-    price: '499',
-    duration: 'per wash',
-    features: ['Exterior Wash', 'Tire Shine', 'Window Cleaning'],
+    price: '699',
+    duration: 'Just a little TLC for ₹699 (1 Week)',
+    features: ['Daily Dust Clean (Microfiber Cloth)', '1 Deep Clean (Exterior – No Foam, Tyre Clean)', '1 Dashboard Polish', '1 Interior Vacuum'],
     popular: false,
   },
   {
     name: 'Super Shine',
-    price: '999',
-    duration: 'per wash',
-    features: ['Everything in Quick Sparkle', 'Interior Vacuuming', 'Dashboard Polish'],
+    price: '1299',
+    duration: 'A smart clean for ₹1299 (2 Weeks)',
+    features: ['Daily Dust Clean (Microfiber Cloth)', '1 Deep Clean ( Interior or Exterior with Foam, Tyre Clean)', '2 Dashboard Polish', '2 Interior Vacuum'],
     popular: true,
   },
   {
     name: 'Ultimate Glow',
-    price: '1499',
-    duration: 'per wash',
-    features: ['Everything in Super Shine', 'Deep Upholstery Clean', 'Protective Wax Coating'],
+    price: '1799',
+    duration: 'Top-tier treatment for ₹1799 (1 Month)',
+    features: ['Daily Dust Clean (Microfiber Cloth)', '1 Deep Cleans (Interior or Exterior with Foam, Tyre Clean)', '4 Dashboard Polish', ' 4 Interior Vacuum'],
     popular: false,
-  },
+  },  
 ];
 
 export default function Pricing({ onPlanSelect }: { onPlanSelect: (planName: string) => void }) {
@@ -99,7 +99,8 @@ export default function Pricing({ onPlanSelect }: { onPlanSelect: (planName: str
                   <ul className="space-y-2">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-2">
-                        <Check className="h-5 w-5 text-green-500" />
+                        {/* <Check className="h-5 w-5 text-green-500" /> */}
+                        <div className="">✅</div>
                         <span>{feature}</span>
                       </li>
                     ))}
