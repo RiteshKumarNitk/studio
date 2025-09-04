@@ -53,7 +53,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
       toast({
         variant: "destructive",
         title: 'Fields Missing',
-        description: 'Please enter your name and a message to send via WhatsApp.',
+        description: 'Please enter your name and a message to send via WhatsApp',
       });
       setIsLoading(false);
       return;
