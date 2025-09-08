@@ -38,12 +38,8 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative w-full bg-gradient-to-b from-secondary via-background to-secondary py-20 overflow-hidden"
+      className="relative w-full bg-secondary py-20 overflow-hidden"
     >
-      {/* floating gradient blobs */}
-      <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
-      <div className="absolute top-40 -right-20 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
-
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* heading */}
         <motion.div
@@ -61,7 +57,7 @@ export default function Services() {
           </p>
         </motion.div>
 
-        {/* bubble cards */}
+        {/* cards */}
         <motion.div
           className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
@@ -74,25 +70,18 @@ export default function Services() {
             return (
               <motion.div key={index} variants={itemVariants}>
                 <Card
-                  className="group relative h-full rounded-[2.5rem] border border-white/30 
-                  bg-gradient-to-br from-white/70 via-white/30 to-white/20 
-                  backdrop-blur-xl shadow-[0_8px_25px_rgba(0,0,0,0.08)] 
-                  hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] transition-all duration-500
+                  className="group relative h-full rounded-2xl 
+                  bg-card shadow-lg 
+                  hover:shadow-xl transition-all duration-500
                   overflow-hidden"
                 >
-                  {/* glossy highlight arc */}
-                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-[120%] h-40 rounded-[50%] bg-gradient-to-b from-white/60 to-transparent opacity-40 group-hover:opacity-60 transition-opacity" />
-
-                  {/* iridescent shine */}
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.6),transparent_70%)]" />
-
                   <CardHeader className="flex flex-col items-center text-center p-10 relative z-10">
                     {/* icon bubble */}
-                    <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full 
-                      bg-gradient-to-br from-primary/50 to-accent/50 
+                    <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full 
+                      bg-primary/10
                       shadow-inner shadow-white/40 group-hover:scale-110 
                       transition-transform duration-500">
-                      <Icon className="h-10 w-10 text-primary drop-shadow" />
+                      <Icon className="h-7 w-7 text-icon-primary drop-shadow" />
                     </div>
                     <CardTitle className="font-headline text-xl font-semibold text-text-primary">
                       {service.name}

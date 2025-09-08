@@ -10,12 +10,25 @@ import { Loader2, MessageCircle, Star } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
+const locations = [
+    'C-Scheme', 'Civil Lines', 'Malviya Nagar', 'Vaishali Nagar', 'Raja Park', 
+    'Mansarovar', 'Jagatpura', 'Pratap Nagar', 'Bani Park', 'Shyam Nagar', 
+    'Sodala', 'Durgapura', 'Sanganer', 'Muralipura', 'Patrakar Colony', 
+    'Nirman Nagar', 'Mahesh Nagar', 'Triveni Nagar', 'Gopalpura'
+];
+const carBrands = [
+    'Maruti Suzuki', 'Hyundai', 'Tata', 'Mahindra', 'Kia', 'Toyota', 'Honda', 
+    'Volkswagen', 'Skoda', 'Renault', 'Ford', 'Nissan', 'MG', 'Jeep',
+    'Mercedes-Benz', 'BMW', 'Audi', 'Jaguar', 'Land Rover', 'Volvo', 'Porsche',
+    'Other'
+];
+
 const plans = ['Starter Shine', 'Classic Clean', 'Elite Detailing'];
 
 export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPlan: string | null; setSelectedPlan: (plan: string | null) => void; }) {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
-  const [formData, setFormData] = useState({ name: '', phone: '', carModel: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', carModel: '', address: '', message: '' });
 
   useEffect(() => {
     if (selectedPlan) {
@@ -44,11 +57,16 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     setFormData((prev) => ({...prev, carModel: value}));
   }
 
+  const handleAddressChange = (value: string) => {
+    setFormData((prev) => ({...prev, address: value}));
+  }
+
+
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
-    const { name, phone, carModel, message } = formData;
+    const { name, phone, carModel, address, message } = formData;
     if (!name || !message) {
       toast({
         variant: "destructive",
@@ -59,14 +77,18 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
       return;
     }
     
-    const yourPhoneNumber = '919664407388'; 
+    const yourPhoneNumber = '919461603054'; 
+
     
     let prefilledMessage = `Hello, my name is ${name}.`;
     if(phone) {
         prefilledMessage += ` My phone number is ${phone}.`;
     }
     if(carModel) {
-        prefilledMessage += ` My car model is ${carModel}.`;
+        prefilledMessage += ` My car brand is ${carModel}.`;
+    }
+     if(address) {
+        prefilledMessage += ` My address is in ${address}.`;
     }
     if (selectedPlan) {
       prefilledMessage += `\nI'm interested in the '${selectedPlan}' plan.`;
@@ -80,7 +102,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     setIsLoading(false);
     
     // Reset form fields
-    setFormData({ name: '', phone: '', carModel: '', message: '' });
+    setFormData({ name: '', phone: '', carModel: '', address: '', message: '' });
     if (selectedPlan) {
       setSelectedPlan(null);
     }
@@ -134,23 +156,32 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
                       <Input id="phone" placeholder="Enter your phone number" value={formData.phone} onChange={handleInputChange} />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="carModel">Car Model</Label>
+                      <Label htmlFor="carModel">Car Brand</Label>
                         <Select onValueChange={handleCarModelChange} value={formData.carModel}>
                             <SelectTrigger>
-                                <SelectValue placeholder="Select car model" />
+                                <SelectValue placeholder="Select car brand" />
                             </SelectTrigger>
                             <SelectContent>
-                                <SelectItem value="Sedan">Sedan</SelectItem>
-                                <SelectItem value="SUV">SUV</SelectItem>
-                                <SelectItem value="Hatchback">Hatchback</SelectItem>
-                                <SelectItem value="Coupe">Coupe</SelectItem>
-                                <SelectItem value="Convertible">Convertible</SelectItem>
-                                <SelectItem value="Minivan">Minivan</SelectItem>
-                                <SelectItem value="Other">Other</SelectItem>
+                                {carBrands.map(brand => (
+                                    <SelectItem key={brand} value={brand}>{brand}</SelectItem>
+                                ))}
                             </SelectContent>
                         </Select>
                     </div>
                 </div>
+                 <div className="space-y-2">
+                      <Label htmlFor="address">Select Your Area</Label>
+                        <Select onValueChange={handleAddressChange} value={formData.address}>
+                            <SelectTrigger>
+                                <SelectValue placeholder="Select your area in Jaipur" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                {locations.map(location => (
+                                    <SelectItem key={location} value={location}>{location}</SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+                    </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea id="message" placeholder="Your message" required className="min-h-[120px]" value={formData.message} onChange={handleInputChange} />

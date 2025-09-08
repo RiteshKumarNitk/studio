@@ -54,7 +54,7 @@ export default function Gallery() {
   return (
     <motion.section
       id="gallery"
-      className="w-full bg-background py-16"
+      className="w-full bg-card py-16"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

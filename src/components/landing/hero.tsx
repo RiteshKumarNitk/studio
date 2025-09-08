@@ -33,9 +33,7 @@ export default function Hero() {
           <Button
               asChild
               size="lg"
-              className="w-full rounded-full px-8 py-6 text-lg font-bold text-white 
-                        bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 
-                        shadow-lg sm:w-auto"
+              className="w-full rounded-full px-8 py-6 text-lg font-bold shadow-lg sm:w-auto"
             >
               <Link href="#plans">Book Your Wash Now</Link>
             </Button>

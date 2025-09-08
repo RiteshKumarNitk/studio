@@ -50,7 +50,7 @@ export default function HowItWorks() {
   };
 
   return (
-    <section id="how-it-works" className="w-full">
+    <section id="how-it-works" className="w-full bg-card">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-2xl text-center"
@@ -75,7 +75,7 @@ export default function HowItWorks() {
         >
           {features.map((feature, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="flex border-none  justify-center bg-transparent bg-none h-full flex-col items-center text-center p-6">
+              <Card className="flex border-none  justify-center bg-transparent bg-none h-full flex-col items-center text-center p-6 shadow-none">
                 <CardHeader className="p-0 justify-center items-center">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                     {feature.icon}
