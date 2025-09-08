@@ -89,10 +89,10 @@ export default function Services() {
                   <CardHeader className="flex flex-col items-center text-center p-10 relative z-10">
                     {/* icon bubble */}
                     <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full 
-                      bg-gradient-to-br from-primary/50 to-accent/50 
+                      bg-primary/10
                       shadow-inner shadow-white/40 group-hover:scale-110 
                       transition-transform duration-500">
-                      <Icon className="h-10 w-10 text-primary drop-shadow" />
+                      <Icon className="h-10 w-10 text-icon-primary drop-shadow" />
                     </div>
                     <CardTitle className="font-headline text-xl font-semibold text-text-primary">
                       {service.name}
