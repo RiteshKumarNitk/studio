@@ -17,13 +17,13 @@ export default function Hero() {
         alt="Car being washed"
         data-ai-hint="car wash background"
         fill
-        className="object-cover -z-20"
+        className="object-cover object-bottom -z-20"
       />
       <div className="absolute inset-0 bg-black/50 -z-10"></div>
       
       <div className="container z-10 px-4 md:px-6 text-center">
         <div className="mx-auto max-w-3xl space-y-6">
-          <h1 className="font-headline text-3xl font-extrabold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="font-headline text-3xl font-semibold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl">
             Daily Dust, Leave It to Us
           </h1>
           <p className="text-lg text-gray-200 md:text-xl">
