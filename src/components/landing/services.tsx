@@ -40,10 +40,6 @@ export default function Services() {
       id="services"
       className="relative w-full bg-secondary py-20 overflow-hidden"
     >
-      {/* floating gradient blobs */}
-      <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
-      <div className="absolute top-40 -right-20 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
-
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* heading */}
         <motion.div
