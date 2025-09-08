@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
 export default function Footer() {
+  const instagramUrl = "https://www.instagram.com/bubbledrive_official?igsh=MWFmN2s0bXFsYzJ1YQ==";
+
   return (
     <footer className="bg-footer-background text-footer-foreground">
       <div className="container mx-auto px-4 py-12 md:px-6">
@@ -31,7 +33,7 @@ export default function Footer() {
           {/* Connect Links */}
           <div className="grid gap-2 text-sm">
             <h3 className="font-semibold">Connect</h3>
-            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Instagram</Link>
+            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">Instagram</a>
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Facebook</Link>
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>WhatsApp</Link>
              <Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Terms & Conditions</Link>
@@ -41,10 +43,12 @@ export default function Footer() {
           <div className="flex flex-col items-start gap-4 md:items-end">
               <p className="text-sm font-semibold">Follow Us</p>
               <div className="flex gap-2">
-                  <Button variant="outline" size="icon" className='border-muted-foreground/50 text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary'>
-                      <Instagram className="h-5 w-5" />
-                      <span className="sr-only">Instagram</span>
-                  </Button>
+                  <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" size="icon" className='border-muted-foreground/50 text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary'>
+                        <Instagram className="h-5 w-5" />
+                        <span className="sr-only">Instagram</span>
+                    </Button>
+                  </a>
                   <Button variant="outline" size="icon" className='border-muted-foreground/50 text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary'>
                       <Facebook className="h-5 w-5" />
                       <span className="sr-only">Facebook</span>
