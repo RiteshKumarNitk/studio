@@ -57,7 +57,7 @@ export default function Services() {
           </p>
         </motion.div>
 
-        {/* bubble cards */}
+        {/* cards */}
         <motion.div
           className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
@@ -70,25 +70,18 @@ export default function Services() {
             return (
               <motion.div key={index} variants={itemVariants}>
                 <Card
-                  className="group relative h-full rounded-[2.5rem] border-none
-                  bg-card/30
-                  backdrop-blur-xl shadow-lg 
+                  className="group relative h-full rounded-2xl 
+                  bg-card shadow-lg 
                   hover:shadow-xl transition-all duration-500
                   overflow-hidden"
                 >
-                   {/* glossy highlight arc */}
-                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-[120%] h-40 rounded-[50%] bg-gradient-to-b from-white/60 to-transparent opacity-40 group-hover:opacity-60 transition-opacity" />
-
-                  {/* iridescent shine */}
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.6),transparent_70%)]" />
-
                   <CardHeader className="flex flex-col items-center text-center p-10 relative z-10">
                     {/* icon bubble */}
-                    <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full 
+                    <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full 
                       bg-primary/10
                       shadow-inner shadow-white/40 group-hover:scale-110 
                       transition-transform duration-500">
-                      <Icon className="h-8 w-8 text-icon-primary drop-shadow" />
+                      <Icon className="h-7 w-7 text-icon-primary drop-shadow" />
                     </div>
                     <CardTitle className="font-headline text-xl font-semibold text-text-primary">
                       {service.name}
