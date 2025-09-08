@@ -4,30 +4,47 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
 const plans = [
   {
-    name: 'Quick Sparkle',
-    price: '499',
-    duration: 'per wash',
-    features: ['Exterior Wash', 'Tire Shine', 'Window Cleaning'],
+    name: 'Starter Shine',
+    price: '699',
+    duration: 'Just a little TLC for ₹699 (1 Week)',
+    description: 'For cars that need a quick refresh, this plan’s got your back.',
+    features: [
+      'Daily Dust Clean (Microfiber Cloth)',
+      '1 Deep Clean (Exterior – No Foam, Tyre Clean)',
+      '1 Dashboard Polish',
+      '1 Interior Vacuum',
+    ],
     popular: false,
   },
   {
-    name: 'Super Shine',
-    price: '999',
-    duration: 'per wash',
-    features: ['Everything in Quick Sparkle', 'Interior Vacuuming', 'Dashboard Polish'],
+    name: 'Classic Clean',
+    price: '1299',
+    duration: 'A smart clean for ₹1299 (2 Weeks)',
+    description: "For the car that loves a little extra care, this one's the sweet spot.",
+    features: [
+      'Daily Dust Clean (Microfiber Cloth)',
+      '1 Deep Clean ( Interior or Exterior with Foam, Tyre Clean)',
+      '2 Dashboard Polish',
+      '2 Interior Vacuum',
+    ],
     popular: true,
   },
   {
-    name: 'Ultimate Glow',
-    price: '1499',
-    duration: 'per wash',
-    features: ['Everything in Super Shine', 'Deep Upholstery Clean', 'Protective Wax Coating'],
+    name: 'Elite Detailing',
+    price: '1799',
+    duration: 'Top-tier treatment for ₹1799 (1 Month)',
+    description: 'For the car that deserves the VIP treatment – because it’s not just any car, it’s your car.',
+    features: [
+      'Daily Dust Clean (Microfiber Cloth)',
+      '1 Deep Cleans (Interior or Exterior with Foam, Tyre Clean)',
+      '4 Dashboard Polish',
+      '4 Interior Vacuum',
+    ],
     popular: false,
   },
 ];
@@ -66,11 +83,14 @@ export default function Pricing({ onPlanSelect }: { onPlanSelect: (planName: str
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">Choose Your Plan</h2>
+          <h2 className="font-headline text-3xl font-bold tracking-tighter text-text-primary sm:text-4xl md:text-5xl">
+            Choose Your Plan
+          </h2>
           <p className="mt-4 text-muted-foreground md:text-xl">
             Simple, transparent pricing. No hidden fees. Ever.
           </p>
         </motion.div>
+
         <motion.div
           className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
@@ -94,18 +114,22 @@ export default function Pricing({ onPlanSelect }: { onPlanSelect: (planName: str
                   <CardDescription>
                     <span className="text-4xl font-bold text-foreground">₹{plan.price}</span> / {plan.duration}
                   </CardDescription>
+                  {/* ✅ New description line */}
+                  <p className="mt-2 text-sm text-gray-600 italic">{plan.description}</p>
                 </CardHeader>
-                <CardContent className="flex-1 p-6 space-y-4">
+
+                <CardContent className="flex-1 px-6 space-y-4">
                   <ul className="space-y-2">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-2">
-                        <Check className="h-5 w-5 text-green-500" />
+                        <div>✅</div>
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter className="p-6 mt-auto">
+
+                <CardFooter className="px-6 mt-auto">
                   <Button
                     size="lg"
                     className="w-full font-bold"

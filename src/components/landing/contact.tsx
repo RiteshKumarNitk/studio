@@ -10,7 +10,6 @@ import { Loader2, MessageCircle, Star } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
-const plans = ['Quick Sparkle', 'Super Shine', 'Ultimate Glow'];
 const locations = [
     'C-Scheme', 'Civil Lines', 'Malviya Nagar', 'Vaishali Nagar', 'Raja Park', 
     'Mansarovar', 'Jagatpura', 'Pratap Nagar', 'Bani Park', 'Shyam Nagar', 
@@ -24,6 +23,7 @@ const carBrands = [
     'Other'
 ];
 
+const plans = ['Starter Shine', 'Classic Clean', 'Elite Detailing'];
 
 export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPlan: string | null; setSelectedPlan: (plan: string | null) => void; }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -71,13 +71,14 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
       toast({
         variant: "destructive",
         title: 'Fields Missing',
-        description: 'Please enter your name and a message to send via WhatsApp.',
+        description: 'Please enter your name and a message to send via WhatsApp',
       });
       setIsLoading(false);
       return;
     }
     
     const yourPhoneNumber = '919461603054'; 
+
     
     let prefilledMessage = `Hello, my name is ${name}.`;
     if(phone) {

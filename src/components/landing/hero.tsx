@@ -11,7 +11,9 @@ export default function Hero() {
       className="relative flex h-[calc(100vh-80px)] w-full items-center justify-center overflow-hidden"
     >
       <Image
-        src="https://images.pexels.com/photos/6872156/pexels-photo-6872156.jpeg"
+        src=""
+        
+                  src="/testimonial/Slider.jpg"
         alt="Car being washed"
         data-ai-hint="car wash background"
         fill
