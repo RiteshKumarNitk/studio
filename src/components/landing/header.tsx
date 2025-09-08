@@ -22,7 +22,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-white border-b">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="#home" className="flex items-center gap-2" prefetch={false}>
-          <Image src="/logo.png" alt="Bubble Drive Logo" width={80} height={40} />
+          <Image src="/logo.png" alt="Bubble Drive Logo" width={150} height={40} />
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (

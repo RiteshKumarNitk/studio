@@ -11,11 +11,17 @@ import { useToast } from '@/hooks/use-toast';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const plans = ['Quick Sparkle', 'Super Shine', 'Ultimate Glow'];
+const locations = [
+    'C-Scheme', 'Civil Lines', 'Malviya Nagar', 'Vaishali Nagar', 'Raja Park', 
+    'Mansarovar', 'Jagatpura', 'Pratap Nagar', 'Bani Park', 'Shyam Nagar', 
+    'Sodala', 'Durgapura', 'Sanganer', 'Muralipura', 'Patrakar Colony', 
+    'Nirman Nagar', 'Mahesh Nagar', 'Triveni Nagar', 'Gopalpura'
+];
 
 export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPlan: string | null; setSelectedPlan: (plan: string | null) => void; }) {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
-  const [formData, setFormData] = useState({ name: '', phone: '', carModel: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', carModel: '', address: '', message: '' });
 
   useEffect(() => {
     if (selectedPlan) {
@@ -44,11 +50,16 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     setFormData((prev) => ({...prev, carModel: value}));
   }
 
+  const handleAddressChange = (value: string) => {
+    setFormData((prev) => ({...prev, address: value}));
+  }
+
+
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
-    const { name, phone, carModel, message } = formData;
+    const { name, phone, carModel, address, message } = formData;
     if (!name || !message) {
       toast({
         variant: "destructive",
@@ -59,7 +70,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
       return;
     }
     
-    const yourPhoneNumber = '918946887702'; 
+    const yourPhoneNumber = '919461603054'; 
     
     let prefilledMessage = `Hello, my name is ${name}.`;
     if(phone) {
@@ -67,6 +78,9 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     }
     if(carModel) {
         prefilledMessage += ` My car model is ${carModel}.`;
+    }
+     if(address) {
+        prefilledMessage += ` My address is in ${address}.`;
     }
     if (selectedPlan) {
       prefilledMessage += `\nI'm interested in the '${selectedPlan}' plan.`;
@@ -80,7 +94,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
     setIsLoading(false);
     
     // Reset form fields
-    setFormData({ name: '', phone: '', carModel: '', message: '' });
+    setFormData({ name: '', phone: '', carModel: '', address: '', message: '' });
     if (selectedPlan) {
       setSelectedPlan(null);
     }
@@ -151,6 +165,19 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
                         </Select>
                     </div>
                 </div>
+                 <div className="space-y-2">
+                      <Label htmlFor="address">Select Your Area</Label>
+                        <Select onValueChange={handleAddressChange} value={formData.address}>
+                            <SelectTrigger>
+                                <SelectValue placeholder="Select your area in Jaipur" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                {locations.map(location => (
+                                    <SelectItem key={location} value={location}>{location}</SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+                    </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea id="message" placeholder="Your message" required className="min-h-[120px]" value={formData.message} onChange={handleInputChange} />
