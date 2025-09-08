@@ -21,11 +21,11 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="grid gap-2 text-sm">
             <h3 className="font-semibold">Quick Links</h3>
-            <Link href="#home" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Home</Link>
-            <Link href="#about" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>About Us</Link>
-            <Link href="#plans" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Plans</Link>
-            <Link href="#services" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Services</Link>
-            <Link href="#contact" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Contact</Link>
+            <Link href="/#home" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Home</Link>
+            <Link href="/#about" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>About Us</Link>
+            <Link href="/#plans" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Plans</Link>
+            <Link href="/#services" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Services</Link>
+            <Link href="/#contact" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Contact</Link>
           </div>
 
           {/* Connect Links */}
@@ -34,6 +34,7 @@ export default function Footer() {
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Instagram</Link>
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Facebook</Link>
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>WhatsApp</Link>
+             <Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Terms & Conditions</Link>
           </div>
 
           {/* Social Icons */}
