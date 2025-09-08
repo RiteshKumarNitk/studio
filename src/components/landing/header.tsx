@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Menu, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -37,13 +37,12 @@ export default function Header() {
           ))}
         </nav>
        <div className="hidden items-center gap-4 md:flex">
-          {/* <span>Contact No.</span> */}
-          <a 
-            href="tel:+919461603054" 
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary  hover:underline"
-          >
-            +91 94616 03054
-          </a>
+          <Button asChild variant="outline">
+            <a href="tel:+919461603054">
+              <Phone className="mr-2 h-4 w-4" />
+              +91 94616 03054
+            </a>
+          </Button>
         </div>
         <Sheet>
           <SheetTrigger asChild>
