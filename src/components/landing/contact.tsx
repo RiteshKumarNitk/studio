@@ -17,6 +17,13 @@ const locations = [
     'Sodala', 'Durgapura', 'Sanganer', 'Muralipura', 'Patrakar Colony', 
     'Nirman Nagar', 'Mahesh Nagar', 'Triveni Nagar', 'Gopalpura'
 ];
+const carBrands = [
+    'Maruti Suzuki', 'Hyundai', 'Tata', 'Mahindra', 'Kia', 'Toyota', 'Honda', 
+    'Volkswagen', 'Skoda', 'Renault', 'Ford', 'Nissan', 'MG', 'Jeep',
+    'Mercedes-Benz', 'BMW', 'Audi', 'Jaguar', 'Land Rover', 'Volvo', 'Porsche',
+    'Other'
+];
+
 
 export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPlan: string | null; setSelectedPlan: (plan: string | null) => void; }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -77,7 +84,7 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
         prefilledMessage += ` My phone number is ${phone}.`;
     }
     if(carModel) {
-        prefilledMessage += ` My car model is ${carModel}.`;
+        prefilledMessage += ` My car brand is ${carModel}.`;
     }
      if(address) {
         prefilledMessage += ` My address is in ${address}.`;
@@ -148,19 +155,15 @@ export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPla
                       <Input id="phone" placeholder="Enter your phone number" value={formData.phone} onChange={handleInputChange} />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="carModel">Car Model</Label>
+                      <Label htmlFor="carModel">Car Brand</Label>
                         <Select onValueChange={handleCarModelChange} value={formData.carModel}>
                             <SelectTrigger>
-                                <SelectValue placeholder="Select car model" />
+                                <SelectValue placeholder="Select car brand" />
                             </SelectTrigger>
                             <SelectContent>
-                                <SelectItem value="Sedan">Sedan</SelectItem>
-                                <SelectItem value="SUV">SUV</SelectItem>
-                                <SelectItem value="Hatchback">Hatchback</SelectItem>
-                                <SelectItem value="Coupe">Coupe</SelectItem>
-                                <SelectItem value="Convertible">Convertible</SelectItem>
-                                <SelectItem value="Minivan">Minivan</SelectItem>
-                                <SelectItem value="Other">Other</SelectItem>
+                                {carBrands.map(brand => (
+                                    <SelectItem key={brand} value={brand}>{brand}</SelectItem>
+                                ))}
                             </SelectContent>
                         </Select>
                     </div>
