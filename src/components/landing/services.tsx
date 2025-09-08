@@ -38,7 +38,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative w-full bg-gradient-to-b from-secondary via-background to-secondary py-20 overflow-hidden"
+      className="relative w-full bg-secondary py-20 overflow-hidden"
     >
       {/* floating gradient blobs */}
       <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
@@ -74,13 +74,13 @@ export default function Services() {
             return (
               <motion.div key={index} variants={itemVariants}>
                 <Card
-                  className="group relative h-full rounded-[2.5rem] border border-white/30 
-                  bg-gradient-to-br from-white/70 via-white/30 to-white/20 
-                  backdrop-blur-xl shadow-[0_8px_25px_rgba(0,0,0,0.08)] 
-                  hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] transition-all duration-500
+                  className="group relative h-full rounded-[2.5rem] border-none
+                  bg-card/30
+                  backdrop-blur-xl shadow-lg 
+                  hover:shadow-xl transition-all duration-500
                   overflow-hidden"
                 >
-                  {/* glossy highlight arc */}
+                   {/* glossy highlight arc */}
                   <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-[120%] h-40 rounded-[50%] bg-gradient-to-b from-white/60 to-transparent opacity-40 group-hover:opacity-60 transition-opacity" />
 
                   {/* iridescent shine */}
@@ -88,11 +88,11 @@ export default function Services() {
 
                   <CardHeader className="flex flex-col items-center text-center p-10 relative z-10">
                     {/* icon bubble */}
-                    <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full 
+                    <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full 
                       bg-primary/10
                       shadow-inner shadow-white/40 group-hover:scale-110 
                       transition-transform duration-500">
-                      <Icon className="h-10 w-10 text-icon-primary drop-shadow" />
+                      <Icon className="h-8 w-8 text-icon-primary drop-shadow" />
                     </div>
                     <CardTitle className="font-headline text-xl font-semibold text-text-primary">
                       {service.name}
