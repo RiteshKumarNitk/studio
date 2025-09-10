@@ -12,39 +12,149 @@ import {
 } from '@/components/ui/carousel';
 import { motion } from 'framer-motion';
 import Autoplay from 'embla-carousel-autoplay';
-
 const images = [
   {
-    src: 'https://images.pexels.com/photos/6872150/pexels-photo-6872150.jpeg',
-    alt: 'Clean sedan car',
-    hint: 'clean sedan',
+    src: '/Gallery/Fortuner1.jpg',
+    alt: 'Toyota Fortuner front view',
+    hint: 'fortuner front',
   },
   {
-    src: 'https://images.pexels.com/photos/6872152/pexels-photo-6872152.jpeg',
-    alt: 'Sparkling SUV',
-    hint: 'sparkling suv',
+    src: '/Gallery/Fortuner2.jpg',
+    alt: 'Toyota Fortuner side angle',
+    hint: 'fortuner side',
   },
   {
-    src: 'https://images.pexels.com/photos/6873178/pexels-photo-6873178.jpeg',
-    alt: 'Polished car interior',
-    hint: 'car interior',
+    src: '/Gallery/Fortuner3.jpg',
+    alt: 'Toyota Fortuner rear view',
+    hint: 'fortuner rear',
   },
   {
-    src: 'https://images.pexels.com/photos/7530997/pexels-photo-7530997.jpeg',
-    alt: 'Shiny car wheel',
-    hint: 'shiny wheel',
+    src: '/Gallery/Fortuner3.1.jpg',
+    alt: 'Toyota Fortuner interior dashboard',
+    hint: 'fortuner interior 1',
   },
   {
-    src: 'https://images.pexels.com/photos/7154622/pexels-photo-7154622.jpeg',
-    alt: 'Car getting washed',
-    hint: 'car wash',
+    src: '/Gallery/Fortuner3.2.jpg',
+    alt: 'Toyota Fortuner steering and dashboard',
+    hint: 'fortuner interior 2',
   },
   {
-    src: 'https://images.pexels.com/photos/4892130/pexels-photo-4892130.jpeg',
-    alt: 'Happy customer with clean car',
-    hint: 'happy customer',
+    src: '/Gallery/Fortuner3.3.jpg',
+    alt: 'Toyota Fortuner infotainment system',
+    hint: 'fortuner interior 3',
   },
+  {
+    src: '/Gallery/Fortuner4.jpg',
+    alt: 'Toyota Fortuner parked outside',
+    hint: 'fortuner outside',
+  },
+  {
+    src: '/Gallery/Fortuner5.jpg',
+    alt: 'Toyota Fortuner on road',
+    hint: 'fortuner on road',
+  },
+  {
+    src: '/Gallery/Fortuner6.jpg',
+    alt: 'Toyota Fortuner night view',
+    hint: 'fortuner night',
+  },
+  {
+    src: '/Gallery/Fortuner7.jpg',
+    alt: 'Toyota Fortuner angled shot',
+    hint: 'fortuner angled',
+  },
+  {
+    src: '/Gallery/swift1.jpg',
+    alt: 'Maruti Swift front view',
+    hint: 'swift front',
+  },
+  {
+    src: '/Gallery/swift2.jpg',
+    alt: 'Maruti Swift side profile',
+    hint: 'swift side',
+  },
+  {
+    src: '/Gallery/swift3.jpg',
+    alt: 'Maruti Swift rear view',
+    hint: 'swift rear',
+  },
+  {
+    src: '/Gallery/swift4.jpg',
+    alt: 'Maruti Swift interior',
+    hint: 'swift interior',
+  },
+  {
+    src: '/Gallery/swift5.jpg',
+    alt: 'Maruti Swift dashboard',
+    hint: 'swift dashboard',
+  },
+  {
+    src: '/Gallery/thar1.jpg',
+    alt: 'Mahindra Thar front view',
+    hint: 'thar front',
+  },
+  {
+    src: '/Gallery/thar2.jpg',
+    alt: 'Mahindra Thar side angle',
+    hint: 'thar side',
+  },
+  {
+    src: '/Gallery/thar3.jpg',
+    alt: 'Mahindra Thar rear view',
+    hint: 'thar rear',
+  },
+  {
+    src: '/Gallery/thar4.jpg',
+    alt: 'Mahindra Thar off-roading',
+    hint: 'thar offroad',
+  },
+  {
+    src: '/Gallery/thar5.jpg',
+    alt: 'Mahindra Thar mountain background',
+    hint: 'thar mountain',
+  },
+  {
+    src: '/Gallery/thar6.jpg',
+    alt: 'Mahindra Thar night shot',
+    hint: 'thar night',
+  },
+  {
+    src: '/Gallery/thar7.jpg',
+    alt: 'Mahindra Thar interior view',
+    hint: 'thar interior',
+  },
+  {
+    src: '/Gallery/thar8.jpg',
+    alt: 'Mahindra Thar dashboard',
+    hint: 'thar dashboard',
+  },
+  {
+    src: '/Gallery/thar9.jpg',
+    alt: 'Mahindra Thar with roof down',
+    hint: 'thar open roof',
+  },
+  {
+    src: '/Gallery/thar10.jpg',
+    alt: 'Mahindra Thar top angle view',
+    hint: 'thar top view',
+  },
+  {
+    src: '/Gallery/thar11.jpg',
+    alt: 'Mahindra Thar climbing rocks',
+    hint: 'thar climbing',
+  },
+  {
+    src: '/Gallery/thar12.jpg',
+    alt: 'Mahindra Thar off-road terrain',
+    hint: 'thar terrain',
+  },
+  {
+    src: '/Gallery/thar13.jpg',
+    alt: 'Mahindra Thar foggy environment',
+    hint: 'thar foggy',
+  }
 ];
+
 
 export default function Gallery() {
   const plugin = useRef(
@@ -106,7 +216,7 @@ export default function Gallery() {
   );
 }
 
-/* ✅ Image Loader Component */
+
 function ImageWithLoader({
   image,
 }: {
@@ -115,15 +225,15 @@ function ImageWithLoader({
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <div className="relative aspect-[4/3] w-full">
+    <div className="relative w-full min-h-[400px] h-auto aspect-auto rounded-2xl overflow-hidden">
       {isLoading && (
-        <div className="absolute inset-0 animate-pulse bg-muted rounded-2xl" />
+        <div className="absolute inset-0 animate-pulse bg-muted z-0" />
       )}
       <Image
         src={image.src}
         alt={image.alt}
         fill
-        className={`object-cover transition-opacity duration-700 ${
+        className={`object-cover transition-opacity duration-700 rounded-2xl ${
           isLoading ? 'opacity-0' : 'opacity-100'
         }`}
         data-ai-hint={image.hint}
