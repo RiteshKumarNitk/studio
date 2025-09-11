@@ -13,21 +13,21 @@ import {
 import { motion } from 'framer-motion';
 import Autoplay from 'embla-carousel-autoplay';
 const images = [
-  // {
-  //   src: '/Gallery/Fortuner1.jpg',
-  //   alt: 'Toyota Fortuner front view',
-  //   hint: 'fortuner front',
-  // },
+  {
+    src: '/Gallery/Fortuner1.jpg',
+    alt: 'Toyota Fortuner front view',
+    hint: 'fortuner front',
+  },
   {
     src: '/Gallery/Fortuner2.jpg',
     alt: 'Toyota Fortuner side angle',
     hint: 'fortuner side',
   },
-  // {
-  //   src: '/Gallery/Fortuner3.jpg',
-  //   alt: 'Toyota Fortuner rear view',
-  //   hint: 'fortuner rear',
-  // },
+  {
+    src: '/Gallery/Fortuner3.jpg',
+    alt: 'Toyota Fortuner rear view',
+    hint: 'fortuner rear',
+  },
   {
     src: '/Gallery/Fortuner3.1.jpg',
     alt: 'Toyota Fortuner interior dashboard',
@@ -43,11 +43,11 @@ const images = [
     alt: 'Toyota Fortuner infotainment system',
     hint: 'fortuner interior 3',
   },
-  // {
-  //   src: '/Gallery/Fortuner4.jpg',
-  //   alt: 'Toyota Fortuner parked outside',
-  //   hint: 'fortuner outside',
-  // },
+  {
+    src: '/Gallery/Fortuner4.jpg',
+    alt: 'Toyota Fortuner parked outside',
+    hint: 'fortuner outside',
+  },
   {
     src: '/Gallery/Fortuner5.jpg',
     alt: 'Toyota Fortuner on road',
@@ -58,11 +58,11 @@ const images = [
     alt: 'Toyota Fortuner night view',
     hint: 'fortuner night',
   },
-  // {
-  //   src: '/Gallery/Fortuner7.jpg',
-  //   alt: 'Toyota Fortuner angled shot',
-  //   hint: 'fortuner angled',
-  // },
+  {
+    src: '/Gallery/Fortuner7.jpg',
+    alt: 'Toyota Fortuner angled shot',
+    hint: 'fortuner angled',
+  },
   {
     src: '/Gallery/swift1.jpg',
     alt: 'Maruti Swift front view',
