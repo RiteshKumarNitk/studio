@@ -97,7 +97,7 @@ const images = [
         src: '/Gallery/thar13.jpg',
         alt: 'Mahindra Thar foggy environment',
         hint: 'thar foggy',
-      },t
+      },
       {
         src: '/Gallery/swift1.jpg',
         alt: 'Maruti Swift front view',
