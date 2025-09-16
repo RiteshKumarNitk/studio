@@ -75,9 +75,9 @@ export default function Services() {
                   hover:shadow-xl transition-all duration-500
                   overflow-hidden"
                 >
-                  <CardHeader className="flex flex-col items-center text-center p-10 relative z-10">
+                  <CardHeader className="flex flex-col items-center text-center p-5 relative z-10">
                     {/* icon bubble */}
-                    <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full 
+                    <div className="mb-2 flex h-14 w-14 items-center justify-center rounded-full 
                       bg-primary/10
                       shadow-inner shadow-white/40 group-hover:scale-110 
                       transition-transform duration-500">
@@ -88,7 +88,7 @@ export default function Services() {
                     </CardTitle>
                   </CardHeader>
 
-                  <CardContent className="px-8 pb-10 text-center relative z-10">
+                  <CardContent className="px-8 pb-5 text-center relative z-10">
                     <p className="text-muted-foreground text-md leading-relaxed">
                       {service.desc}
                     </p>

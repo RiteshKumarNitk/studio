@@ -11,7 +11,8 @@ const plans = [
   {
     name: 'Starter Shine',
     price: '699',
-    duration: 'Just a little TLC for ₹699 (1 Week)',
+    duration: 'Just a little TLC for ₹699',
+    timeduration:'1 Week',
     description: 'For cars that need a quick refresh, this plan’s got your back.',
     features: [
       'Daily Dust Clean (Microfiber Cloth)',
@@ -24,7 +25,8 @@ const plans = [
   {
     name: 'Classic Clean',
     price: '1299',
-    duration: 'A smart clean for ₹1299 (2 Weeks)',
+    duration: 'A smart clean for ₹1299',
+    timeduration:'2 Weeks',
     description: "For the car that loves a little extra care, this one's the sweet spot.",
     features: [
       'Daily Dust Clean (Microfiber Cloth)',
@@ -32,12 +34,13 @@ const plans = [
       '2 Dashboard Polish',
       '2 Interior Vacuum',
     ],
-    popular: true,
+    popular: false,
   },
   {
     name: 'Elite Detailing',
     price: '1799',
-    duration: 'Top-tier treatment for ₹1799 (1 Month)',
+    duration: 'Top-tier treatment for ₹1799',
+    timeduration:'1 Month',
     description: 'For the car that deserves the VIP treatment – because it’s not just any car, it’s your car.',
     features: [
       'Daily Dust Clean (Microfiber Cloth)',
@@ -45,7 +48,7 @@ const plans = [
       '4 Dashboard Polish',
       '4 Interior Vacuum',
     ],
-    popular: false,
+    popular: true,
   },
 ];
 
@@ -113,6 +116,7 @@ export default function Pricing({ onPlanSelect }: { onPlanSelect: (planName: str
                   <CardTitle className="font-headline text-2xl font-bold">{plan.name}</CardTitle>
                   <CardDescription>
                     <span className="text-4xl font-bold text-foreground">₹{plan.price}</span> / {plan.duration}
+                    <div className="bold italic text-[#FF8800]">{plan.timeduration}</div>
                   </CardDescription>
                   {/* ✅ New description line */}
                   <p className="mt-2 text-sm text-gray-600 italic">{plan.description}</p>

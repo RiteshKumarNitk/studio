@@ -18,141 +18,141 @@ const images = [
   //   alt: 'Toyota Fortuner front view',
   //   hint: 'fortuner front',
   // },
-  {
-    src: '/Gallery/Fortuner2.jpg',
-    alt: 'Toyota Fortuner side angle',
-    hint: 'fortuner side',
-  },
   // {
-  //   src: '/Gallery/Fortuner3.jpg',
-  //   alt: 'Toyota Fortuner rear view',
-  //   hint: 'fortuner rear',
-  // },
-  {
-    src: '/Gallery/Fortuner3.1.jpg',
-    alt: 'Toyota Fortuner interior dashboard',
-    hint: 'fortuner interior 1',
-  },
-  {
-    src: '/Gallery/Fortuner3.2.jpg',
-    alt: 'Toyota Fortuner steering and dashboard',
-    hint: 'fortuner interior 2',
-  },
-  {
-    src: '/Gallery/Fortuner3.3.jpg',
-    alt: 'Toyota Fortuner infotainment system',
-    hint: 'fortuner interior 3',
-  },
-  // {
-  //   src: '/Gallery/Fortuner4.jpg',
-  //   alt: 'Toyota Fortuner parked outside',
-  //   hint: 'fortuner outside',
-  // },
-  {
-    src: '/Gallery/Fortuner5.jpg',
-    alt: 'Toyota Fortuner on road',
-    hint: 'fortuner on road',
-  },
-  {
-    src: '/Gallery/Fortuner6.jpg',
-    alt: 'Toyota Fortuner night view',
-    hint: 'fortuner night',
-  },
-  // {
-  //   src: '/Gallery/Fortuner7.jpg',
-  //   alt: 'Toyota Fortuner angled shot',
-  //   hint: 'fortuner angled',
-  // },
-  {
-    src: '/Gallery/swift1.jpg',
-    alt: 'Maruti Swift front view',
-    hint: 'swift front',
-  },
-  {
-    src: '/Gallery/swift2.jpg',
-    alt: 'Maruti Swift side profile',
-    hint: 'swift side',
-  },
-  {
-    src: '/Gallery/swift3.jpg',
-    alt: 'Maruti Swift rear view',
-    hint: 'swift rear',
-  },
-  {
-    src: '/Gallery/swift4.jpg',
-    alt: 'Maruti Swift interior',
-    hint: 'swift interior',
-  },
-  {
-    src: '/Gallery/swift5.jpg',
-    alt: 'Maruti Swift dashboard',
-    hint: 'swift dashboard',
-  },
-  {
-    src: '/Gallery/thar1.jpg',
-    alt: 'Mahindra Thar front view',
-    hint: 'thar front',
-  },
-  {
-    src: '/Gallery/thar2.jpg',
-    alt: 'Mahindra Thar side angle',
-    hint: 'thar side',
-  },
-  {
-    src: '/Gallery/thar3.jpg',
-    alt: 'Mahindra Thar rear view',
-    hint: 'thar rear',
-  },
-  {
-    src: '/Gallery/thar4.jpg',
-    alt: 'Mahindra Thar off-roading',
-    hint: 'thar offroad',
-  },
-  {
-    src: '/Gallery/thar5.jpg',
-    alt: 'Mahindra Thar mountain background',
-    hint: 'thar mountain',
-  },
-  {
-    src: '/Gallery/thar6.jpg',
-    alt: 'Mahindra Thar night shot',
-    hint: 'thar night',
-  },
-  {
-    src: '/Gallery/thar7.jpg',
-    alt: 'Mahindra Thar interior view',
-    hint: 'thar interior',
-  },
-  {
-    src: '/Gallery/thar8.jpg',
-    alt: 'Mahindra Thar dashboard',
-    hint: 'thar dashboard',
-  },
-  {
-    src: '/Gallery/thar9.jpg',
-    alt: 'Mahindra Thar with roof down',
-    hint: 'thar open roof',
-  },
-  {
-    src: '/Gallery/thar10.jpg',
-    alt: 'Mahindra Thar top angle view',
-    hint: 'thar top view',
-  },
-  {
-    src: '/Gallery/thar11.jpg',
-    alt: 'Mahindra Thar climbing rocks',
-    hint: 'thar climbing',
-  },
-  {
-    src: '/Gallery/thar12.jpg',
-    alt: 'Mahindra Thar off-road terrain',
-    hint: 'thar terrain',
-  },
-  {
-    src: '/Gallery/thar13.jpg',
-    alt: 'Mahindra Thar foggy environment',
-    hint: 'thar foggy',
-  }
+    //   src: '/Gallery/Fortuner3.jpg',
+    //   alt: 'Toyota Fortuner rear view',
+    //   hint: 'fortuner rear',
+    // },
+    // {
+    //   src: '/Gallery/Fortuner4.jpg',
+    //   alt: 'Toyota Fortuner parked outside',
+    //   hint: 'fortuner outside',
+    // },
+    // {
+      //   src: '/Gallery/Fortuner7.jpg',
+      //   alt: 'Toyota Fortuner angled shot',
+      //   hint: 'fortuner angled',
+      // },
+      {
+        src: '/Gallery/thar1.jpg',
+        alt: 'Mahindra Thar front view',
+        hint: 'thar front',
+      },
+      {
+        src: '/Gallery/thar2.jpg',
+        alt: 'Mahindra Thar side angle',
+        hint: 'thar side',
+      },
+      {
+        src: '/Gallery/thar3.jpg',
+        alt: 'Mahindra Thar rear view',
+        hint: 'thar rear',
+      },
+      {
+        src: '/Gallery/thar4.jpg',
+        alt: 'Mahindra Thar off-roading',
+        hint: 'thar offroad',
+      },
+      {
+        src: '/Gallery/thar5.jpg',
+        alt: 'Mahindra Thar mountain background',
+        hint: 'thar mountain',
+      },
+      {
+        src: '/Gallery/thar6.jpg',
+        alt: 'Mahindra Thar night shot',
+        hint: 'thar night',
+      },
+      {
+        src: '/Gallery/thar7.jpg',
+        alt: 'Mahindra Thar interior view',
+        hint: 'thar interior',
+      },
+      {
+        src: '/Gallery/thar8.jpg',
+        alt: 'Mahindra Thar dashboard',
+        hint: 'thar dashboard',
+      },
+      {
+        src: '/Gallery/thar9.jpg',
+        alt: 'Mahindra Thar with roof down',
+        hint: 'thar open roof',
+      },
+      {
+        src: '/Gallery/thar10.jpg',
+        alt: 'Mahindra Thar top angle view',
+        hint: 'thar top view',
+      },
+      {
+        src: '/Gallery/thar11.jpg',
+        alt: 'Mahindra Thar climbing rocks',
+        hint: 'thar climbing',
+      },
+      {
+        src: '/Gallery/thar12.jpg',
+        alt: 'Mahindra Thar off-road terrain',
+        hint: 'thar terrain',
+      },
+      {
+        src: '/Gallery/thar13.jpg',
+        alt: 'Mahindra Thar foggy environment',
+        hint: 'thar foggy',
+      },t
+      {
+        src: '/Gallery/swift1.jpg',
+        alt: 'Maruti Swift front view',
+        hint: 'swift front',
+      },
+      {
+        src: '/Gallery/swift2.jpg',
+        alt: 'Maruti Swift side profile',
+        hint: 'swift side',
+      },
+      {
+        src: '/Gallery/swift3.jpg',
+        alt: 'Maruti Swift rear view',
+        hint: 'swift rear',
+      },
+      {
+        src: '/Gallery/swift4.jpg',
+        alt: 'Maruti Swift interior',
+        hint: 'swift interior',
+      },
+      {
+        src: '/Gallery/swift5.jpg',
+        alt: 'Maruti Swift dashboard',
+        hint: 'swift dashboard',
+      },
+      {
+      src: '/Gallery/Fortuner2.jpg',
+      alt: 'Toyota Fortuner side angle',
+      hint: 'fortuner side',
+    },
+    {
+      src: '/Gallery/Fortuner3.1.jpg',
+      alt: 'Toyota Fortuner interior dashboard',
+      hint: 'fortuner interior 1',
+    },
+    {
+      src: '/Gallery/Fortuner3.2.jpg',
+      alt: 'Toyota Fortuner steering and dashboard',
+      hint: 'fortuner interior 2',
+    },
+    {
+      src: '/Gallery/Fortuner3.3.jpg',
+      alt: 'Toyota Fortuner infotainment system',
+      hint: 'fortuner interior 3',
+    },
+    {
+      src: '/Gallery/Fortuner5.jpg',
+      alt: 'Toyota Fortuner on road',
+      hint: 'fortuner on road',
+    },
+    {
+      src: '/Gallery/Fortuner6.jpg',
+      alt: 'Toyota Fortuner night view',
+      hint: 'fortuner night',
+    },
 ];
 
 
