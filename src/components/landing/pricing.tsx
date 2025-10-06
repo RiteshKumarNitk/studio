@@ -12,7 +12,7 @@ const plans = [
     name: 'Starter Shine',
     price: '699',
     duration: 'Just a little TLC for ₹699',
-    timeduration:'1 Week',
+    timeduration:'7 Days',
     description: 'For cars that need a quick refresh, this plan’s got your back.',
     features: [
       'Daily Dust Clean (Microfiber Cloth)',
@@ -26,7 +26,7 @@ const plans = [
     name: 'Classic Clean',
     price: '1299',
     duration: 'A smart clean for ₹1299',
-    timeduration:'2 Weeks',
+    timeduration:'30 days (alternate days).',
     description: "For the car that loves a little extra care, this one's the sweet spot.",
     features: [
       'Daily Dust Clean (Microfiber Cloth)',

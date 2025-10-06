@@ -13,7 +13,7 @@ export default function Hero() {
       <Image
         src=""
         
-                  src="/testimonial/Slider.jpg"
+                  src="/testimonial/Slider_2.jpg"
         alt="Car being washed"
         data-ai-hint="car wash background"
         fill

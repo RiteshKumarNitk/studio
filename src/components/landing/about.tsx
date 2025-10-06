@@ -66,10 +66,11 @@ export default function About() {
             </h2>
             <p className="text-muted-foreground text-md/relaxed">
               At Bubble Drive, we’re a team of car lovers who take pride in
-              making vehicles look their absolute best. We know how frustrating
-              it can be to see your car lose its shine, which is why we’ve made
-              it our mission to bring that fresh, just-off-the-lot feeling back
-              to every ride.
+              making vehicles look their absolute best. As Jaipur’s first
+              subscription-based daily doorstep car cleaning service, we know
+              how frustrating it can be to see your car lose its shine, which is
+              why we’ve made it our mission to bring that fresh,
+              just-off-the-lot feeling back to every ride.
             </p>
           </div>
           <div className="overflow-hidden">

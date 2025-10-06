@@ -37,6 +37,7 @@ export default function Footer() {
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Facebook</Link>
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>WhatsApp</Link>
              <Link href="/terms" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Terms & Conditions</Link>
+             <Link href="/PrivacyPolicy" className="text-muted-foreground hover:text-primary transition-colors" prefetch={false}>Privacy Policy</Link>
           </div>
 
           {/* Social Icons */}
