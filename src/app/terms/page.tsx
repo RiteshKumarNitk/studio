@@ -24,7 +24,7 @@ export default function TermsPage() {
               <p>
                 Our standard service includes exterior car body wash with water
                 and shampoo followed by microfiber wiping. Interior cleaning,
-                tire polish, and engine bay cleaning are not included unless
+                tyre polish, and engine bay cleaning are not included unless
                 purchased as an add-on.
               </p>
 

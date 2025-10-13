@@ -102,8 +102,6 @@ export default function PrivacyPolicy() {
                 Email: <a href="mailto:bubbledriveofficial@gmail.com">bubbledriveofficial@gmail.com</a>
                 <br />
                 Phone: 9461603054
-                <br />
-                Address: [Insert Address]
               </p>
             </div>
           </div>

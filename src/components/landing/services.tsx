@@ -9,14 +9,18 @@ import {
   Gauge,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from 'next/image';
+import { TyreIcon } from "@/components/icons/TyreIcon";
+import { SteeringIcon} from "@/components/icons/SteeringIcon";
+
 
 const services = [
   { icon: Sparkles, name: "Deep Cleaning", desc: "Thorough inside-out cleaning for a fresh look." },
   { icon: WandSparkles, name: "Polishing", desc: "Restores shine and removes fine scratches." },
   { icon: Droplets, name: "Waterless Wash", desc: "Eco-friendly cleaning with minimal water usage." },
   { icon: Wind, name: "Interior Vacuuming", desc: "Removes dust and debris from seats & carpets." },
-  { icon: Sparkles, name: "Tire Polish", desc: "Keeps your tires looking shiny and brand new." },
-  { icon: Gauge, name: "Dashboard Polish", desc: "Protects & restores dashboard shine." },
+  { icon: TyreIcon, name: "Tyre Polish", desc: "Keeps your tyres looking shiny and brand new." },
+  { icon: SteeringIcon, name: "Dashboard Polish", desc: "Protects & restores dashboard shine." },
 ];
 
 export default function Services() {
@@ -79,9 +83,9 @@ export default function Services() {
                     {/* icon bubble */}
                     <div className="mb-2 flex h-14 w-14 items-center justify-center rounded-full 
                       bg-primary/10
-                      shadow-inner shadow-white/40 group-hover:scale-110 
+                       group-hover:scale-110 
                       transition-transform duration-500">
-                      <Icon className="h-7 w-7 text-icon-primary drop-shadow" />
+                      <Icon className="h-7 w-7 text-icon-black" />
                     </div>
                     <CardTitle className="font-headline text-xl font-semibold text-text-primary">
                       {service.name}
