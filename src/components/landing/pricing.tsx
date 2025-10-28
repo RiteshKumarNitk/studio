@@ -22,21 +22,7 @@ const plans = [
     ],
     popular: false,
   },
-  {
-    name: 'Classic Clean',
-    price: '1299',
-    duration: 'A smart clean for ₹1299',
-    timeduration:'30 days (alternate days).',
-    description: "For the car that loves a little extra care, this one's the sweet spot.",
-    features: [
-      'Daily Dust Clean (Microfiber Cloth)',
-      '1 Deep Clean ( Interior or Exterior with Foam, Tyre Clean)',
-      '2 Dashboard Polish',
-      '2 Interior Vacuum',
-    ],
-    popular: false,
-  },
-  {
+   {
     name: 'Elite Detailing',
     price: '1799',
     duration: 'Top-tier treatment for ₹1799',
@@ -50,6 +36,21 @@ const plans = [
     ],
     popular: true,
   },
+  {
+    name: 'Classic Clean',
+    price: '1299',
+    duration: 'A smart clean for ₹1299',
+    timeduration:'1 Month (Alternate Days)',
+    description: "For the car that loves a little extra care, this one's the sweet spot.",
+    features: [
+      'Daily Dust Clean (Microfiber Cloth)',
+      '1 Deep Clean ( Interior or Exterior with Foam, Tyre Clean)',
+      '2 Dashboard Polish',
+      '2 Interior Vacuum',
+    ],
+    popular: false,
+  },
+ 
 ];
 
 export default function Pricing({ onPlanSelect }: { onPlanSelect: (planName: string) => void }) {
@@ -115,7 +116,7 @@ export default function Pricing({ onPlanSelect }: { onPlanSelect: (planName: str
                 <CardHeader className="p-6">
                   <CardTitle className="font-headline text-2xl font-bold">{plan.name}</CardTitle>
                   <CardDescription>
-                    <span className="text-4xl font-bold text-foreground">₹{plan.price}</span> / {plan.duration}
+                    <span className="text-4xl font-bold text-foreground">₹{plan.price}</span> 
                     <div className="bold italic text-[#FF8800]">{plan.timeduration}</div>
                   </CardDescription>
                   {/* ✅ New description line */}
