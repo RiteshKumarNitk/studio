@@ -23,7 +23,7 @@ const carBrands = [
     'Other'
 ];
 
-const plans = ['Starter Shine', 'Classic Clean', 'Elite Detailing'];
+const plans = ['Starter Shine', 'Classic Clean', 'Elite Detailing','Instant Glow'];
 
 export default function Contact({ selectedPlan, setSelectedPlan }: { selectedPlan: string | null; setSelectedPlan: (plan: string | null) => void; }) {
   const [isLoading, setIsLoading] = useState(false);
